@@ -1,0 +1,123 @@
+#immig-landing-div {
+	height: 150px;
+}
+
+#btn-immig-logout {
+	float: right;
+}
+
+.check_in_header {
+	background-color: #f80085;
+	color: #fff;
+	font-weight: 600;
+}
+
+.check_in_header span {
+	background: #fff;
+	border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	color: #f80085;
+	display: inline-block;
+	font-weight: bold;
+	margin-right: 5px;
+	text-align: center;
+	width: 2.0rem;
+}
+
+.immig_panel_header {
+	background-color: #f80085;
+	color: #fff;
+	font-size: 15.5px;
+}
+
+.immig_panel_header span {
+	background: #fff;
+	border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	color: #101010;
+	display: inline-block;
+	font-weight: bold;
+	margin-right: 5px;
+	text-align: center;
+	width: 1.5rem;
+}
+
+.btn_request {
+	float: right;
+}
+
+.question_one_ul {
+	list-style: none;
+}
+
+.question_one_ul > li {
+	line-height: inherit;
+}
+
+.rejected-modal-header {
+	background: #dc3545 !important;
+	color: #fff;
+}
+
+.submitted-modal-header {
+	background: #1e7e34 !important;
+	color: #fff;
+}
+
+.validation_inpgrp_error {
+	flex-basis: 100% !important;
+	margin-left: 100px;
+}
+
+.relationship_info_div {
+	display: none;
+}
+
+.currently_located_div {
+	display: none;
+}
+
+.div_hidden_clone {
+	display: none;
+}
+
+audio {
+	display: block;
+	width: 100%;
+	margin-top: 1.2rem;
+}
+
+#recordingsList{
+	max-width: 28em;
+}
+
+.travel_contact_div {
+	border: 1px solid #dddddd;
+	padding: 1rem;
+	margin: 3px;
+}
+
+.immigration_h4_text {
+	font-size: 20px;
+	color: #25538f;
+	font-weight: 500;
+}
+
+.immig_content_li > ul > li {
+	line-height : 1.5rem;
+}
+
+.pac-container {
+	z-index: 99999999999 !important;
+}
+
+
+.immigration_landing_div {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}

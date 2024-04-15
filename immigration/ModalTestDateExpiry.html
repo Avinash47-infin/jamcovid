@@ -1,0 +1,22 @@
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header rejected-modal-header">
+			<h5 class="modal-title" id="testdateExpiryLabel"><i class="fa fa-ban" aria-hidden="true"></i> NOTE</h5>
+		</div>
+		<div class="modal-body">
+			<div class="col-md-12">
+				<div style="font-size: 18px;">
+					<p>Your test date is required to be within 10 days of your travel date.</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning btn-brd-radius" id="tstexpiry-rejected">OK</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#tstexpiry-rejected').click(function(){
+		window.location.reload();
+	});
+</script>

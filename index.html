@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Basic -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- Site Metas -->
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+
+	<title>Visit Jamaica</title>
+
+	<!-- bootstrap core css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom/dataTable.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom/formValidation.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom/daterange/datepicker.css" />
+	<link rel="stylesheet" type="text/css" href="js/custom/toastr/toastr.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom/multiselect_checkbox/jquery.multiselect.css" />
+	<!-- fonts style -->
+	<link href="css/fonts/fonts.googleapi.css" rel="stylesheet" />
+	<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/custom/fontawesome.css">
+
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/custom-style.css" rel="stylesheet" />
+	<!-- responsive style -->
+	<link href="css/responsive.css" rel="stylesheet" />
+
+	<link rel="icon" href="images/favicon.png" type="image/gif" sizes="32x32">
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script>
+		$(function(){
+			var version = Date.now();
+			$("#immigration-login").load("immigration/login.html?v="+version);
+			$("#immigration-landing").load("immigration/Landing.html?v="+version);
+			$("#immigration-request-lists").load("immigration/Requests.html?v="+version);
+			$("#immigration-registration").load("immigration/Registration.html?v="+version);
+			$("#immigration-identification").load("immigration/Identification.html?v="+version);
+			$("#immigration-questions").load("immigration/Questions.html?v="+version);
+			$("#immigration-qtn-assessment").load("immigration/QuarantineAssessment.html?v="+version);
+			$("#immigration-terms").load("immigration/HealthCheck.html?v="+version);
+			$("#immigration-qtn-order").load("immigration/QuarantineOrder.html?v="+version);
+			$("#immigration-customs-c5").load("immigration/C5Form.html?v="+version);
+			$("#appSubmittedModal").load("immigration/ModalSubmitted.html?v="+version);
+			$("#appAdvanceRegisteredModal").load("immigration/ModalAdvanceRegister.html");
+			$("#travelNotifyModal").load("immigration/ModalTravelNotify.html");
+			$("#visaNotifyModal").load("immigration/ModalVisaNotify.html");
+			$("#passportConfirmModal").load("immigration/ModalPassportConfirm.html");
+			$("#testdateExpiryModal").load("immigration/ModalTestDateExpiry.html");
+			$("#testdateExpiryModal").load("immigration/ModalTestDateExpiry.html");
+			$("#highRiskCountryReminderModal").load("immigration/ModalHighRiskReminder.html?v="+version);
+		});
+	</script>
+	<link href="css/custom/immigration.css" rel="stylesheet" />
+
+</head>
+<body style="overflow-x: hidden;">
+	<div class="corona-preloader-backdrop">
+		<div class="corona-page-preloader">Loading...</div>
+	</div>
+
+	<div class="container-fluid landingbg" id="immigration-landing"></div>
+
+	<div class="margin" id="immigration-non-resident" style="display: none;">
+
+		<!-- login -->
+		<div id="immigration-login">
+		</div>
+
+		<!-- Request Lists -->
+		<div id="immigration-request-lists" style="display: none;">
+		</div>
+
+		<!-- 1.Registration / Set up entry process -->
+		<div id="immigration-registration" style="display: none;">
+		</div>
+
+		<!-- 2.Obtain traveller information details -->
+		<div id="immigration-identification" style="display: none;">
+		</div>
+
+		<!-- 3.Health Status / Questionnaire -->
+		<div id="immigration-questions" style="display: none;">
+		</div>
+
+		<!-- 4.Intended Stay Information  -->
+		<div id="immigration-qtn-assessment" style="display: none;">
+		</div>
+
+		<!-- 5.Consent  -->
+		<div id="immigration-terms" style="display: none;">
+		</div>
+
+		<!-- 6.Quarantine Order  -->
+		<div id="immigration-qtn-order" style="display: none;">
+		</div>
+
+		<!-- 7.Customs C5 Form  -->
+		<div id="immigration-customs-c5" style="display: none;">
+		</div>
+
+		<!-- Application Submitted - Modal -->
+		<div class="modal fade" id="appSubmittedModal" tabindex="-1" role="dialog" aria-labelledby="appSubmittedLabel" aria-hidden="true">
+		</div>
+
+		<!-- Application Advance Registered - Modal -->
+		<div class="modal fade" id="appAdvanceRegisteredModal" tabindex="-1" role="dialog" aria-labelledby="appAdvanceRegLabel" aria-hidden="true">
+		</div>
+
+		<!-- Travel Info Notify - Modal -->
+		<div class="modal fade" id="travelNotifyModal" tabindex="-1" role="dialog" aria-labelledby="travelNotifyLabel" aria-hidden="true">
+		</div>
+
+		<!-- Country Visa Notify - Modal -->
+		<div class="modal fade" id="visaNotifyModal" tabindex="-1" role="dialog" aria-labelledby="visaNotifyLabel" aria-hidden="true">
+		</div>
+
+		<!-- Passport Confirmation - Modal -->
+		<div class="modal fade" id="passportConfirmModal" tabindex="-1" role="dialog" aria-labelledby="passportConfirmLabel" aria-hidden="true">
+		</div>
+
+		<!-- Test Date Expiry - Modal -->
+		<div class="modal fade" id="testdateExpiryModal" tabindex="-1" role="dialog" aria-labelledby="testdateExpiryLabel" aria-hidden="true">
+		</div>
+
+		<!-- High Risk Country Reminder - Modal -->
+		<div class="modal fade" id="highRiskCountryReminderModal" tabindex="-1" role="dialog" aria-labelledby="highRiskReminderLabel" aria-hidden="true">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/custom/config.js?v=1005"></script>
+	<script type="text/javascript" src="js/custom/field_rules.js"></script>
+	<script type="text/javascript" src="js/custom/dataTable.js?v=1001"></script>
+	<script type="text/javascript" src="js/custom/formValidation.js"></script>
+	<script type="text/javascript" src="js/custom/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="js/custom/sweet-alert/sweet-alert-2.1.2.min.js"></script>
+	<script type="text/javascript" src="js/custom/daterange/datepicker.js"></script>
+	<script type="text/javascript" src="js/custom/daterange/moment.min.js"></script>
+	<script type="text/javascript" src="js/custom/cookie.js"></script>
+	<script type="text/javascript" src="js/custom/multiselect_checkbox/jquery.multiselect.js"></script>
+	<script type="text/javascript" src="js/custom/recorder/recorder.js"></script>
+	<script type="text/javascript" src="js/custom/dob/dob.js"></script>
+	<script type="text/javascript" src="js/custom/currency/currency.js"></script>
+	<script type="text/javascript" src="js/custom/signature/signature_pad.min.js"></script>
+	<script type="text/javascript" src="js/custom/immigration_certificate/dom-to-image.min.js"></script>
+	<script>
+		var scripts = [
+		'js/custom/immigration.js'
+		];
+		for (var i = 0; i < scripts.length; i++) {
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = scripts[i] +'?v=' + Date.now();
+			document.head.appendChild(script);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="visitjamlanding visitjamlanding-logo">
+			<img src="images/jamaicalogo.png">
+		</div>
+	</div>
+
+	<div class="col-md-6" style="display: block;">
+		<div class="visitjamlanding-question">
+			<label class="landing-quest-label">Do you live in Jamaica?</label>
+			<div class="visitjamlanding">
+				<button type="button" class="btn btn-brd-radius" id="btn-immig-residential">Yes</button>
+				<button type="button" class="btn btn-brd-radius" id="btn-immig-nonresidential">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row mt-2">
+	<div class="container text-center visitjamlanding-content">
+		<p class="mt-2">Welcome to the application platform to obtain a Travel Authorisation for Jamaica. The sole use of the information collected here is to assess the health risks of all persons intending to travel to Jamaica and to auto-populate portions of the Immigration and Customs Declaration to enhance the process on your arrival.</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('#btn-immig-residential').click(function(){
+		window.location.href = posConfig.immigration_url;
+	});
+
+	$('#btn-immig-nonresidential').click(function(){
+		$('#immigration-landing').hide();
+		$('#immigration-non-resident').show();
+	});
+</script>

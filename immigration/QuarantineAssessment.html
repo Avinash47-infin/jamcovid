@@ -1,0 +1,368 @@
+<section>
+	<div class="non-resident-head non-resident-head-assessment"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>4/7</span> Intended Stay Information</div>
+				<form id="immigrant-qtn-assessment-form">
+					<div class="panel-body">
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Type of accomodation<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate" name="accommodation_type" id="accommodation-type" data-rule="additionaldocs">
+										<option value="">Select</option>
+										<option value="1">Hotel</option>
+										<!-- <option value="2">Resort</option> -->
+										<option value="3">Villas</option>
+										<option value="4">Apartments</option>
+										<option value="7">Guest House</option>
+										<option value="5">Private Home</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div id="accommodation-type-cloned"></div>
+
+						<div class="row">
+							<div class="col-md-6" id="accn-name-cloned">
+								<div class="form-group">
+									<label>House Number</label>
+									<input type="text" class="form-control pos_validate stay_house_no" name="house_no" value="" data-rule="additionaldocs" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Street Address<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate set_latlng stay_street_address" id="map-street-address" name="street_address" value="" data-rule="additionaldocs" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Town or District<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate set_latlng stay_town" id="map-town" name="stay_town" value="" data-rule="additionaldocs" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Parish<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate select-parish set_latlng" id="map-parish" name="stay_parish" data-rule="additionaldocs">
+										<option value="">Select</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Please enter your Hotel/Resort name OR address of your intended stay in Jamaica in the box below and select the relevant matched location provided on screen. You may move the map pin to your exact location if needed. (<i class="fa fa-map-marker" style="color: red;" aria-hidden="true"></i>)<span class="text-danger"> *</span></label>
+									<input type="text" id="homeqtn-autocomplete" class="form-control" placeholder="please type here" name="autocomplete" value=""/>
+									<input type="hidden" id="homeqtn-lat" class="form-control pos_validate" name="lat" data-rule="additionaldocs" />
+									<span class="validation_error latlng_validation_error"></span>
+									<input type="hidden" id="homeqtn-lng" class="form-control pos_validate" name="lng" data-rule="additionaldocs" />
+									<div id="homeqtn-map" className="map" style="width:100%;height:500px"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-qtn-assessment', 'immigration-questions');">Back</button>
+						<button type="button" class="btn btn-warning btn-brd-radius" id="btn-qtn-assessment">Next</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="div-private-home-4">
+	<div class="col-md-2">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input" id="private-home-1" value="1" name="private_home_option">
+				<label class="custom-control-label" for="private-home-1">Own Residence</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input" id="private-home-2" value="2" name="private_home_option">
+				<label class="custom-control-label" for="private-home-2">With relatives / friends</label>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="col-md-4">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input" id="private-home-3" value="3" name="private_home_option">
+				<label class="custom-control-label" for="private-home-3">Paid home sharing (AirBnB, Homestay, etc)</label>
+			</div>
+		</div>
+	</div> -->
+</div>
+<div class="div_hidden_clone" id="accn-type-house">
+	<div class="form-group">
+		<label>House Number</label>
+		<input type="text" class="form-control pos_validate stay_house_no" name="house_no" value="" data-rule="additionaldocs" />
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone" id="accn-type-villa">
+	<div class="form-group">
+		<label>Villa Name<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate stay_accomodation_name stay_hotel_villa" name="accomodation_name" id="select-villa-details" data-rule="additionaldocs">
+			<option value="">Select</option>
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone" id="accn-type-guesthouse">
+	<div class="form-group">
+		<label>Guest House<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate stay_accomodation_name stay_hotel_villa" id="select-ghouse-details" name="accomodation_name" data-rule="additionaldocs">
+			<option value="">Select</option>
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone" id="accn-type-apartment">
+	<div class="form-group">
+		<label>Apartment Name<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate stay_accomodation_name stay_hotel_villa" name="accomodation_name" id="select-apartment-details" data-rule="additionaldocs">
+			<option value="">Select</option>
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone" id="accn-type-hotel">
+	<div class="form-group">
+		<label>Hotel Name<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate stay_accomodation_name stay_hotel_villa" name="accomodation_name" id="select-hotel-details" data-rule="additionaldocs">
+			<option value="">Select</option>
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone" id="accn-type-resort">
+	<div class="form-group">
+		<label>Resort Name<span class="text-danger"> *</span></label>
+		<input type="text" class="form-control pos_validate stay_accomodation_name" name="accomodation_name" value="" data-rule="additionaldocs" />
+		<span class="validation_error"></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+	let homeQtnMarker;
+	let homeQtnMap;
+	let homeQtnAutocomplete;
+
+	var mapScript = document.createElement('script');
+	mapScript.type = 'text/javascript';
+	mapScript.src = "https://maps.googleapis.com/maps/api/js?key="+posConfig.map_api_key+"&libraries=places,geometry&callback=initHomeQtnMap";
+	document.head.appendChild(mapScript);
+
+	function initHomeQtnMap() {
+		homeQtnAutocomplete = new window.google.maps.places.Autocomplete(document.getElementById("homeqtn-autocomplete"));
+		homeQtnAutocomplete.setComponentRestrictions(
+			{'country': ['jm']});
+
+		homeQtnMap = new window.google.maps.Map(document.getElementById("homeqtn-map"), {
+			zoom  : 9,
+			center: { lat: 18.153111207907887, lng: -77.38409513671874 }
+		});
+
+		homeQtnAutocomplete.addListener('place_changed', function (){
+			let place = homeQtnAutocomplete.getPlace();
+
+			if (place.address_components)
+				setHomeQtnMarkerLocation(homeQtnAutocomplete.getPlace().geometry.location);
+		});
+
+		homeQtnAutocomplete.onkeypress = function(event) {
+			if (event.keyCode == 13)
+				return false;
+		};
+
+		homeQtnMap.addListener('click', function (location){
+			setHomeQtnMarkerLocation(location.latLng);
+		});
+
+	}
+
+    /**
+    * Set marker on the map
+    *
+    * @param  {object}  latLng               marker location
+    * @param  {boolean} isNeedToUpdateState  Is need to update the state on while setting marker on google map
+    *
+    * @return {void}
+    */
+    function setHomeQtnMarkerLocation(latLng) {
+    	//console.log(latLng.lat(),latLng.lng());
+    	if (homeQtnMarker) {
+    		homeQtnMarker.setPosition(latLng);
+    	}
+    	else {
+    		homeQtnMarker = new window.google.maps.Marker({
+    			map: homeQtnMap,
+    			position: latLng,
+    			draggable: true
+    		});
+    	}
+
+    	document.getElementById("homeqtn-lat").value = latLng.lat();
+    	document.getElementById("homeqtn-lng").value = latLng.lng();
+    	$('.latlng_validation_error').html('');
+
+    	getHomeQtnMarkerAddress(homeQtnMarker.getPosition());
+
+    	homeQtnMap.setCenter(latLng);
+
+    	homeQtnMarker.addListener('dragend', function (location) {
+    		let latLng = location.latLng;
+    		setHomeQtnMarkerLocation(latLng);
+    	});
+    }
+
+    function getHomeQtnMarkerAddress(latLng) {
+    	let geocoder = new window.google.maps.Geocoder();
+
+    	geocoder.geocode({
+    		latLng: latLng
+    	}, function (response) {
+    		if (response) {
+    			document.getElementById("homeqtn-autocomplete").value = response[0].formatted_address;
+    		}
+    	});
+    }
+
+    // if(window.google) {
+    // 	console.log('called');
+    // 	initHomeQtnMap();
+    // }
+
+    /**
+	* accommodation type
+	*/
+	$(document).on('change', '#accommodation-type', function() {
+		var value = $(this).val();
+		$('#accommodation-type-cloned').empty();
+		$('#accn-name-cloned').empty();
+
+		var acc_name_cloned = $('#accn-type-house').clone();
+		if(value == 5) {
+			var cloned = $('#div-private-home-4').clone();
+			$('#accommodation-type-cloned').append(cloned);
+			$('#accommodation-type-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+		} else if(value == 1) {
+			acc_name_cloned = $('#accn-type-hotel').clone();
+		} else if(value == 2) {
+			acc_name_cloned = $('#accn-type-resort').clone();
+		} else if(value == 3) {
+			acc_name_cloned = $('#accn-type-villa').clone();
+		} else if(value == 4) {
+			acc_name_cloned = $('#accn-type-apartment').clone();
+		} else if(value == 7) {
+			acc_name_cloned = $('#accn-type-guesthouse').clone();
+		}
+		$('#accn-name-cloned').append(acc_name_cloned);
+		$('#accn-name-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+		var parish = $('#map-parish').val();
+		if(parish != '') {
+			populateParishInfoOnQO();
+		}
+	});
+
+
+
+	$(document).on('change', '.stay_hotel_villa', function() {
+		var value = $(this).val();
+		if(value != '') {
+			var address = $('option:selected', this).attr('address');
+			var parish = $('option:selected', this).attr('parish');
+			var town = $('option:selected', this).attr('town');
+			$('.stay_street_address').val(address);
+			$('.stay_town').val(town);
+			$('#map-parish').val(parish);
+
+			var lat = $('option:selected', this).attr('lat');
+			var lng = $('option:selected', this).attr('lng');
+
+			var latLng = new google.maps.LatLng(lat,lng);
+			setHomeQtnMarkerLocation(latLng);
+
+		} else {
+			$('.stay_street_address').val('');
+			$('#map-parish').val('');
+			$('.stay_town').val('');
+
+			$('#homeqtn-autocomplete').val('');
+			document.getElementById("homeqtn-lat").value = '';
+			document.getElementById("homeqtn-lng").value = '';
+		}
+		populateParishInfoOnQO();
+	});
+
+	$(document).on('change', '#map-parish', function() {
+		populateParishInfoOnQO();
+	});
+
+	function populateParishInfoOnQO() {
+		var parish_id = $('#map-parish').val();
+		var parish = $( "#map-parish option:selected" ).text()
+		$('.stay_health_depart').val(parish);
+		var parish_contact_list = {
+			1 : "9569873",
+			2 : "8281680",
+			3 : "9522512",
+			4 : "3128535",
+			5 : "3128572",
+			6 : "9869043",
+			7 : "9610128",
+			8 : "5425621",
+			9 : "5481088",
+			10: "5425621",
+			12: "5879404",
+			13: "9261550",
+			14: "5492087",
+		}
+		var contact_no = parish_contact_list[parish_id];
+		$('.health_depart_contact').val(contact_no);
+	}
+
+	/**
+	* Submit address form
+	*/
+	$(document).on('click', '#btn-qtn-assessment', function() {
+
+		var isValid = true;
+		$("form#immigrant-qtn-assessment-form :input[type=radio]").each(function(){
+			var name = $(this).attr("name");
+			if($(`input:radio[name="${name}"]:checked`).length == 0) {
+				isValid = false;
+				return;
+			}
+		});
+
+		if(isValid) {
+			submitQuarantineAssessmentForm();
+		} else {
+			dataTable.showNotificationMessage(2, "Please answer the required questions");
+		}
+
+	});
+</script>

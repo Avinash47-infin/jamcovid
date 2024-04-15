@@ -1,0 +1,9 @@
+/node_modules
+.env
+.phpunit.result.cache
+npm-debug.log
+yarn-error.log
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.properties

@@ -1,0 +1,625 @@
+<section>
+	<div class="non-resident-head non-resident-head-questions"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>3/7</span> Health Status / Questionnaire</div>
+				<form id="questionnaire-form">
+					<div class="panel-body">
+						<div class="ques_lrc_section">
+							<p>Public health and safety are Jamaica’s top priority. Help us protect visitors and the Jamaican public by providing truthful and complete answers to the following questions.</p>
+						</div>
+						<div class="ques_hrc_section" style="display: none;">
+							<p>The health authorities require that you get tested for COVID-19 PCR or Antigen at a CLIA registered or ISO 15189 certified laboratory. If your travel date is up to March 10, 2021, your test must have been within 10 days of your date of travel. If your travel date is on or after March 11, 2021, your test must have been within 3 days of your date of travel. The test must be authorized by the United States Food and Drug Administration (FDA) under an Emergency Use Authorization (EUA) or meets the standards of the World Health Organisation (WHO). A negative test result must be presented to an airline representative in order to complete the check in for your flight.</p>
+							<p>
+								<p>The test result should show the following:</p>
+								<ul>
+									<li>Name of individual tested</li>
+									<li>Date of birth</li>
+									<li>Lab identification and credentials</li>
+									<li>Date the test sample was collected</li>
+									<li>Type of test (PCR or Antigen)</li>
+									<li>Test result</li>
+								</ul>
+							</p>
+							<p>Public health and safety are Jamaica’s top priority. Help us protect visitors and the Jamaican public by providing truthful and complete answers to the following questions.</p>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label><b>1. Do you have any symptoms of illness?</b><span class="text-danger"> *</span></label>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_seven" id="question-seven-yes" value="1" name="question_seven">
+										<label class="custom-control-label" for="question-seven-yes">Yes</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_seven" id="question-seven-no" value="2" name="question_seven">
+										<label class="custom-control-label" for="question-seven-no">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="question-one-cloned"></div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label><b>2. Do you have any chronic medical conditions?</b><span class="text-danger"> *</span></label>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_ten" id="question-ten-yes" value="1" name="question_ten">
+										<label class="custom-control-label" for="question-ten-yes">Yes</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_ten" id="question-ten-no" value="2" name="question_ten">
+										<label class="custom-control-label" for="question-ten-no">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12" id="question-medconditions-div"></div>
+						</div>
+
+						<div id="question-two-div"></div>
+
+						<ul class="question_one_ul">
+							<div id="li-tested-cloned"></div>
+							<div class="row" id="tested-confirmed"></div>
+							<div id="retested-confirmed"></div>
+						</ul>
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label class="ques_lrc_section"><b>4. Have you been in a health care facility that cares for persons who may have COVID-19 within the last fourteen 14 days?</b><span class="text-danger"> *</span></label>
+									<label class="ques_hrc_section" style="display: none;"><b>3. Have you been in a health care facility that cares for persons who may have COVID-19 within the last fourteen 14 days?</b><span class="text-danger"> *</span></label>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_three" id="question-three-yes" value="1" name="question_three">
+										<label class="custom-control-label" for="question-three-yes">Yes</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_three" id="question-three-no" value="2" name="question_three">
+										<label class="custom-control-label" for="question-three-no">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label class="ques_lrc_section"><b>5. Did you provide care for patients with COVID-19 within the last 14 days?</b><span class="text-danger"> *</span></label>
+									<label class="ques_hrc_section" style="display: none;"><b>4. Did you provide care for patients with COVID-19 within the last 14 days?</b><span class="text-danger"> *</span></label>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_five" id="question-five-yes" value="1" name="question_five">
+										<label class="custom-control-label" for="question-five-yes">Yes</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input question_five" id="question-five-no" value="2" name="question_five">
+										<label class="custom-control-label" for="question-five-no">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="ques_lrc_section"><b>6. Have you knowingly been in contact or close proximity with anyone confirmed to have tested positive for COVID-19 or suspected to have COVID-19?</b><span class="text-danger"> *</span></label>
+									<label class="ques_hrc_section" style="display: none;"><b>5. Have you knowingly been in contact or close proximity with anyone confirmed to have tested positive for COVID-19 or suspected to have COVID-19?</b><span class="text-danger"> *</span></label>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input" id="question-six-yes" value="1" name="question_six">
+										<label class="custom-control-label" for="question-six-yes">Yes</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input" id="question-six-no" value="2" name="question_six">
+										<label class="custom-control-label" for="question-six-no">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="ques_lrc_section"><b>7. Is your usual work related to any of these?</b><span class="text-danger"> *</span></label>
+									<label class="ques_hrc_section" style="display: none;"><b>6. Is your usual work related to any of these?</b><span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate" name="main_occupation" data-rule="questionnaire">
+										<option value="">Select</option>
+										<option value="1">Healthcare Worker</option>
+										<option value="2">Cruise Ship Worker</option>
+										<option value="3">EMTs or Paramedics</option>
+										<option value="4">Nursing Home</option>
+										<option value="5">Penal Institution</option>
+										<option value="6">None of the above</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-questions', 'immigration-identification');">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Next</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="div_hidden_clone" id="quest-one-info">
+	<p><b>Check if you currently have any of the following symptoms:</b></p>
+	<div class="row">
+		<ul class="question_one_ul">
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[1]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=2 id="question-one-2" value="1">
+					<label class="custom-control-label" for="question-one-2">History of fever or temperature greater than 38ºC or 100.4ºF within the past seven days,</label>
+				</div>
+			</li>
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[2]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=3 id="question-one-3" value="1">
+					<label class="custom-control-label" for="question-one-3">Cough</label>
+				</div>
+			</li>
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[3]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=4 id="question-one-4" value="1">
+					<label class="custom-control-label" for="question-one-4">Sore throat</label>
+				</div>
+			</li>
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[4]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=5 id="question-one-5" value="1">
+					<label class="custom-control-label" for="question-one-5">Shortness of breath OR difficulty breathing</label>
+				</div>
+			</li>
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[5]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=6 id="question-one-6" value="1">
+					<label class="custom-control-label" for="question-one-6">Chest pain</label>
+				</div>
+			</li>
+			<li>
+				<div class="custom-control custom-checkbox mb-3">
+					<input type="checkbox" name="question_one[6]" class="custom-control-input quest_ckbox symp_cbox" data-param_id=7 id="question-one-7" value="1">
+					<label class="custom-control-label" for="question-one-7">Other symptoms</label>
+				</div>
+			</li>
+			<li class="other_symptoms" style="display: none;">
+				<div class="col-md-12">
+					<div class="form-group">
+						<textarea class="form-control pos_validate textarea_symptoms" name="other_symptoms" data-param_id=7 placeholder="Other Symptoms" rows="5" data-rule="questionnaire"></textarea>
+						<span class="validation_error"></span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="quest-two-info">
+	<div class="col-md-4">
+		<label>When were you tested?</label>
+		<div class="form-group">
+			<label>Date<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate quest_datepicker" id="covid-tested-date" name="tested_date" value="" data-rule="questionnaire" readonly="true" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label>Where were you tested?</label>
+		<div class="form-group">
+			<label>Country<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate select_country" id="select-tested-country" name="tested_country" data-rule="questionnaire">
+				<option value="">Select</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label>Where were you tested?</label>
+		<div class="form-group">
+			<label>City<span class="text-danger"> *</span></label>
+			<div id="tested-city-container">
+				<input type="text" class="form-control pos_validate" name="tested_city" value="" data-rule="questionnaire" />
+				<span class="validation_error"></span>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Did the result of the test confirm that you had COVID-19?<span class="text-danger"> *</span></label>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_1" id="question-two-1-yes" value="1" name="question_two_1">
+				<label class="custom-control-label" for="question-two-1-yes">Yes</label>
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_1" id="question-two-1-no" value="2" name="question_two_1">
+				<label class="custom-control-label" for="question-two-1-no">No</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row div_hidden_clone" id="question-two-clone">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label><b>3. Have you been tested for COVID-19?</b><span class="text-danger"> *</span></label>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two" id="question-two-yes" value="1" name="question_two">
+				<label class="custom-control-label" for="question-two-yes">Yes</label>
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two" id="question-two-no" value="2" name="question_two">
+				<label class="custom-control-label" for="question-two-no">No</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="div_hidden_clone" id="question-two-one-div">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Did the result of the test confirm that you had COVID-19?<span class="text-danger"> *</span></label>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_1" id="question-two-1-yes" value="1" name="question_two_1">
+				<label class="custom-control-label" for="question-two-1-yes">Yes</label>
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_1" id="question-two-1-no" value="2" name="question_two_1">
+				<label class="custom-control-label" for="question-two-1-no">No</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 div_hidden_clone" id="tested-confirmed-info">
+	<div class="form-group">
+		<label>Have you recovered and have been retested?<span class="text-danger"> *</span></label>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input question_two_2" id="question-two-2-yes" value="1" name="question_two_2">
+			<label class="custom-control-label" for="question-two-2-yes">Yes</label>
+		</div>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input question_two_2" id="question-two-2-no" value="2" name="question_two_2">
+			<label class="custom-control-label" for="question-two-2-no">No</label>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="retested-confirmed-info">
+	<div class="col-md-4">
+		<label>When were you re-tested?</label>
+		<div class="form-group">
+			<label>Date<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate quest_datepicker" name="retested_date" value="" data-rule="questionnaire" readonly="true" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label>Where were you re-tested?</label>
+		<div class="form-group">
+			<label>Country<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate select_country" id="select-retested-country" name="retested_country" data-rule="questionnaire">
+				<option value="">Select</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label>Where were you re-tested?</label>
+		<div class="form-group">
+			<label>City<span class="text-danger"> *</span></label>
+			<div id="retested-city-container">
+				<input type="text" class="form-control pos_validate" name="retested_city" value="" data-rule="questionnaire" />
+				<span class="validation_error"></span>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Did the result of the re-test confirm that you no longer have COVID-19?<span class="text-danger"> *</span></label>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_3" id="question-two-3-yes" value="1" name="question_two_3">
+				<label class="custom-control-label" for="question-two-3-yes">Yes</label>
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input question_two_3" id="question-two-3-no" value="2" name="question_two_3">
+				<label class="custom-control-label" for="question-two-3-no">No</label>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="div_hidden_clone" id="tested-state-select-input-clone">
+	<label>Where were you tested?</label>
+	<div class="form-group">
+		<label>State<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate" id="select-tested-states" name="tested_state" data-rule="questionnaire">
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+
+<div class="div_hidden_clone" id="tested-state-text-input-clone">
+	<label>Where were you tested?</label>
+	<div class="form-group">
+		<label>State<span class="text-danger"> *</span></label>
+		<input type="text" class="form-control pos_validate" name="tested_state" value="" data-rule="questionnaire" />
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="div_hidden_clone input-group mt-3" id="negative-input-clone">
+	<input type="file" name="negative_certificate_2" id="nagative-cert-file-2" class="form-control pos_validate nagative_cert_file" accept=".png,image/jpg,image/jpeg,.pdf" data-rule="immigration" capture />
+	<span class="validation_error"></span>
+	<div class="input-group-append" style="cursor: pointer;">
+		<span class="btn btn-danger" id="btn-remove-negfileinput"><i class="fa fa-minus"></i></span>
+	</div>
+</div>
+<div class="form-group div_hidden_clone" id="question-medc-clone">
+	<label>Medical Conditions/ Illnesses<span class="text-danger"> *</span></label>
+	<select class="form-control pos_validate" id="select-medical-conditions" name="medical_conditions[]" multiple="multiple" data-rule="questionnaire">
+		<option value="1">Hypertension</option>
+		<option value="2">Diabetes</option>
+		<option value="3">Asthma</option>
+		<option value="4">Heart DIsease</option>
+		<option value="5">Sickle Cell Disease</option>
+		<option value="6">Chronic Kidney Disease</option>
+		<option value="7">Cancer</option>
+		<option value="8">Immunosuppressive state</option>
+		<option value="9">HIV</option>
+		<option value="10">No, I don’t have any of these conditions</option>
+	</select>
+	<span class="validation_error"></span>
+</div>
+<script type="text/javascript">
+
+	/**
+	* report for someone else
+	*/
+	$(document).on('click', '#question-one-7', function() {
+		if (this.checked) {
+			$('.other_symptoms').show();
+			questionnaire_rule['other_symptoms'] = {
+				"required": {
+					"value": true,
+					"message": "Please mention the symptoms"
+				},
+				"max": {
+					"value": fieldRule.immigration.other_symptoms.max,
+					"message": "Maximum length is "+fieldRule.immigration.other_symptoms.max
+				}
+			};
+		} else {
+			$('.textarea_symptoms').val('');
+			$('.textarea_symptoms').next().html('');
+			$('.other_symptoms').hide();
+			delete questionnaire_rule['other_symptoms'];
+		}
+	});
+
+	/**
+	* Have you been tested for COVID-19?
+	*/
+	$(document).on('click', '.question_two', function() {
+		var value = $(this).val();
+		if(value == 1) {
+			var cloned = $('#quest-two-info').clone();
+			if(!$('#li-tested-cloned').html()) {
+				$('#li-tested-cloned').append(cloned);
+				$('#li-tested-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+				initiateDatePicker('quest_datepicker');
+			}
+		} else {
+			$('#li-tested-cloned').empty();
+			$('#tested-confirmed').empty();
+			$('#retested-confirmed').empty();
+		}
+	});
+
+	/**
+	* Have you been tested for COVID-19?
+	*/
+	$(document).on('click', '.question_seven', function() {
+		var value = $(this).val();
+		if(value == 1) {
+			var cloned = $('#quest-one-info').clone();
+			if(!$('#question-one-cloned').html()) {
+				$('#question-one-cloned').append(cloned);
+				$('#question-one-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+			}
+		} else {
+			$('#question-one-cloned').empty();
+		}
+	});
+
+	/**
+	* Did the result of the test confirm that you had COVID-19?
+	*/
+	$(document).on('click', '.question_two_1', function() {
+		var value = $(this).val();
+		if(value == 1) {
+			var cloned = $('#tested-confirmed-info').clone();
+			if(!$('#tested-confirmed').html()) {
+				$('#tested-confirmed').append(cloned);
+				$('#tested-confirmed').find('.div_hidden_clone').removeClass('div_hidden_clone');
+			}
+		} else {
+			$('#tested-confirmed').empty();
+			$('#retested-confirmed').empty();
+		}
+	});
+
+	/**
+	* Have you recovered and retested?
+	*/
+	$(document).on('click', '.question_two_2', function() {
+		var value = $(this).val();
+		$('#retested-confirmed').empty();
+		if(value == 1) {
+			var cloned = $('#retested-confirmed-info').clone();
+			if(!$('#retested-confirmed').html()) {
+				$('#retested-confirmed').append(cloned);
+				$('#retested-confirmed').find('.div_hidden_clone').removeClass('div_hidden_clone');
+				initiateDatePicker('quest_datepicker');
+			}
+		}
+	});
+
+	$(document).on('click', '.symp_cbox', function() {
+		if(this.checked && $(this).data('param_id') == 8) {
+
+			if($('#question-one-7').prop('checked')) {
+				$('.textarea_symptoms').val('');
+				$('.textarea_symptoms').next().html('');
+				$('.other_symptoms').hide();
+				delete questionnaire_rule['other_symptoms'];
+			}
+			$('.symp_cbox').not(this).prop('checked', false);
+
+		} else {
+			$('#question-seven-check').prop('checked', false);
+		}
+	});
+
+	$(document).on('change', '#select-tested-country-cert', function() {
+		var value = $(this).val();
+		var countryOptions = ["38","231","232"];
+
+		if(countryOptions.indexOf(value) >= 0) {
+			var request  = {
+				'url'  	   		  : "states?country_id="+value,
+				'type' 	   		  : "GET",
+				'data' 	   		  : {},
+				'dataType' 		  : "json",
+				'success_message' : false,
+				'error_message'   : true,
+				'ajax_loader'	  : true,
+				'window_reload'	  : false
+			}
+			dataTable.makeRequest(request, processCurrentResponse);
+			function processCurrentResponse(response, status_code) {
+				if(status_code == posConfig.response_code.ok) {
+					var data = response.data;
+					var options = '<option value="">Select</option>';
+					var states_list = data.states;
+					for(var i in states_list) {
+						options += "<option value='"+states_list[i].name+"' state-id='"+states_list[i].id+"'>"+states_list[i].name+"</option>";
+					}
+
+					$('#select-tested-states').empty();
+					$('#select-tested-states').append(options);
+
+					var cloned = $('#tested-state-select-input-clone').clone();
+					$('#tested-state-input-div').empty();
+					$('#tested-state-input-div').append(cloned);
+					$('#tested-state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+
+				} else if(status_code == posConfig.response_code.bad_request) {
+					var cloned = $('#tested-state-text-input-clone').clone();
+					$('#tested-state-input-div').empty();
+					$('#tested-state-input-div').append(cloned);
+					$('#tested-state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+				}
+			}
+		} else {
+			var cloned = $('#tested-state-text-input-clone').clone();
+			$('#tested-state-input-div').empty();
+			$('#tested-state-input-div').append(cloned);
+			$('#tested-state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+		}
+
+		if(value != "") {
+			$("#countries-travelled").find("option[value="+value+"]").prop("selected", "selected");
+			$('#countries-travelled').multiselect('reload');
+		}
+	});
+
+	$("#covid-neg-tested-date").datepicker({
+		format: 'yyyy-mm-dd',
+		autoHide: true,
+		endDate: new Date()
+	}).on('change', function() {
+		$(this).next().html('');
+		$(this).removeClass('error_border');
+	});
+
+	$(document).on('click', '#btn-add-negfileinput', function() {
+		var cloned = $('#negative-input-clone').clone();
+		console.log(cloned);
+		if(!$('#negative-input-div').html()) {
+			$('#negative-input-div').append(cloned);
+			$('#negative-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+		}
+	});
+
+	$(document).on('click', '#btn-remove-negfileinput', function() {
+		$('#negative-input-div').empty();
+	});
+
+	$(document).on('click', '.question_ten', function() {
+		var value = $(this).val();
+		if(value == 1) {
+			var cloned = $('#question-medc-clone').clone();
+			if(!$('#question-medconditions-div').html()) {
+				$('#question-medconditions-div').append(cloned);
+				$('#question-medconditions-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+				enableSelectMultiple('select-medical-conditions');
+			}
+		} else {
+			$('#question-medconditions-div').empty();
+		}
+	});
+
+	$(document).on('change', '#select-medical-conditions', function() {
+		var value = $(this).val();
+		if ($.inArray("10", value) != -1) {
+			$('#select-medical-conditions').multiselect( 'reset' );
+			$("#select-medical-conditions").find("option[value='10']").prop('selected', 'selected');
+			$('#select-medical-conditions').multiselect('reload');
+		}
+	});
+
+
+	/**
+	* Submit identification form
+	*/
+	$('#questionnaire-form').on('submit', function (e) {
+		e.preventDefault();
+
+		var question_seven = $("input[name='question_seven']:checked").val();
+
+		if(question_seven == 1) {
+			var symp_question = $("#questionnaire-form .symp_cbox:checked").val();
+			if(symp_question == undefined) {
+				dataTable.showNotificationMessage(2, "Please select the symptoms of illness");
+				return false;
+			}
+		}
+
+		if($('form#questionnaire-form #nagative-cert-file').length == 1) {
+			var fileOneLength = document.getElementById('nagative-cert-file-1').files.length;
+			var fileTwoLength = $('form#questionnaire-form #nagative-cert-file-2').val();
+			if(fileOneLength == 0 || fileTwoLength == '' ) {
+				dataTable.showNotificationMessage(2, "Please upload your negative COVID19 test result file");
+				return false;
+			}
+		}
+
+		var question_ten = $("input[name='question_ten']:checked").val();
+		if(question_ten == 1) {
+			var medical_conditions = $('#select-medical-conditions').val();
+			if(medical_conditions.length == 0) {
+				dataTable.showNotificationMessage(2, "Please choose the medical conditions");
+				return false;
+			}
+		}
+
+		submitQuestionnaireForm();
+	});
+</script>

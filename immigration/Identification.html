@@ -1,0 +1,823 @@
+<section>
+	<div class="non-resident-head non-resident-head-identification"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>2/7</span> Traveller Information</div>
+				<form id="identification-form">
+					<div class="panel-body">
+						<input type="hidden" class="updated-user-email" name="email" value="">
+						<span class="validation_error"></span>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Last Name<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_lastname passport_confirm" id="identi-lastname" name="lastname" value="" confirm-input="c5ppt-lastname" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>First Name<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_firstname passport_confirm" id="identi-firstname" name="firstname" value="" confirm-input="c5ppt-firstname" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Middle Name</label>
+									<input type="text" class="form-control pos_validate identi_middlename" id="identi-middlename" name="middlename" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Country of Residence<span class="text-danger"> *</span></label>
+									<span class="form-control span_country_name"></span>
+								</div>
+							</div>
+							<div class="col-md-4" id="state-input-div">
+								<div class="form-group">
+									<label>State/Province/Region<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_state" name="state" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>City/Town<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_city" name="city" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Home Street Address<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_street_address" name="address_in_jamaica" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Zip/Postal Code</label>
+									<input type="text" class="form-control pos_validate identi_zipcode" name="zipcode" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Occupation<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate identi_occupation" name="occupation" data-rule="immigration">
+										<option value="">Select</option>
+										<option value="AGRICU">Agriculture</option>
+										<option value="AIRLIN">Airline Industry</option>
+										<option value="ARTSEN">Arts & Entertainment</option>
+										<option value="CEOVPS">C.E.O. & Vice Presidents</option>
+										<option value="CHILD">Child</option>
+										<option value="COMPUT">Computer Services</option>
+										<option value="CONSTR">Construction</option>
+										<option value="CUSTOM">Customer Service</option>
+										<option value="EDUAC">Educational</option>
+										<option value="FINANC">Financial Services/Insurance</option>
+										<option value="GENERA">General Services/Drivers</option>
+										<option value="GOVERN">Government</option>
+										<option value="HOMETE">Home Technician/Caregiver/Domistic Worker/Baby Sitters</option>
+										<option value="HOSPIT">Hospitality Industry</option>
+										<option value="HOUSW">Housewife</option>
+										<option value="JOURNA">Journalism/Reporters/Editors</option>
+										<option value="JUDICI">Judicial/Lawyers/Clerk of Courts</option>
+										<option value="MANAGE">Management</option>
+										<option value="MANUF">Manufacturing</option>
+										<option value="MARKET">Marketing, Advertising & P.R.</option>
+										<option value="MEDICA">Medical Practioners</option>
+										<option value="OTHERO">Other Occupation</option>
+										<option value="PROFES">Professionals/Real Estate</option>
+										<option value="RESEAR">Research & Science</option>
+										<option value="RETIRE">Retired</option>
+										<option value="SALES">Sales</option>
+										<option value="SECRET">Secretarial Services</option>
+										<option value="SECURI">Security/Police/Firemen/Military</option>
+										<option value="SELFEM">Self-Employed</option>
+										<option value="SOCIAW">Social Worker/Voluntary Services/Religious Leaders</option>
+										<option value="SPORTS">Sports / Coaches</option>
+										<option value="STUDEN">Student</option>
+										<option value="TECHNI">Technical/Engineering/Maintenance</option>
+										<option value="NOTSTA">Not Stated</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<label>Date Of Birth<span class="text-danger"> *</span></label>
+								<div class="form-group custom_dob_container">
+									<div id="dob-container" class="form-control text-center"></div>
+									<input type="hidden" id="my-dob" name="dob" value="" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Gender<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate identi_gender" name="gender" data-rule="immigration">
+										<option value="">Select</option>
+										<option value="1">Male</option>
+										<option value="2">Female</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Intended date of Arrival in Jamaica<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate datepicker identi_date_of_travel" name="travel_to_jamaica" value="" data-rule="immigration" readonly="true" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Intended Date of Return<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate date_of_return" id="date-of-return" name="return_from_jamaica" value="" data-rule="immigration" readonly="true" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Mobile Number<span class="text-danger"> *</span></label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<select class="form-control select-dialingcode pos_validate" name="dialingcode_in_overseas" data-rule="immigration" style="width: 200px;">
+												<option value="">Dialing Code</option>
+											</select>
+											<span class="validation_error div_hidden_clone"></span>
+										</div>
+										<input type="text" class="form-control pos_validate" id="ident-mobile-no-overseas" name="mobile_number_in_overseas" value="" data-rule="immigration" onkeypress="return restrictMobileNumber(event)" maxlength="13" data-float=".1" />
+										<span class="validation_error validation_inpgrp_error"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Passport Number<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate identi_passport_number passport_confirm special_char_input" id="identi-passport" name="passport_number" value="" confirm-input="c5ppt-passport" data-rule="immigration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Country of Passport Issue<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate select_country identi_country_of_issue" id="identi-country_of_issue" name="country_of_issue" data-rule="immigration">
+										<option value="">Select</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Countries visited in the last 6 weeks<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate dropdown_multi_checkbox" id="countries-travelled" name="countries_travelled[]" multiple="multiple" data-rule="immigration">
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="pov_ukdate_row" id="uktraveldate-div"></div>
+							<div class="col-md-12 pov_ukdate_row">
+								<div class="form-group">
+									<label>Purpose Of Visit<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate" name="stay_purpose_of_visit" id="stay-purpose-visit" data-rule="immigration">
+										<option value="">Select</option>
+										<option value="1">Visiting Friends / Relatives</option>
+										<option value="2">Vacation</option>
+										<option value="3">Business / Meeting</option>
+										<option value="4">Intransit</option>
+										<option value="7">Honeymoon / Wedding</option>
+										<option value="8">Other</option>
+										<option value="5">Resident</option>
+										<option value="6">Work</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+						<div id="other-purpose-visit-cloned"></div>
+
+						<p>Mode of Travel?<span class="text-danger"> *</span></p>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input currently_located" id="currently-located-1" value="1" name="currently_located">
+										<label class="custom-control-label" for="currently-located-1">By Air</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input currently_located" id="currently-located-2" value="2" name="currently_located">
+										<label class="custom-control-label" for="currently-located-2">By Sea</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="currently-located-cloned"></div>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p>Next of Kin / Emergency Contact</p>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Name<span class="text-danger"> *</span></label>
+											<input type="text" class="form-control pos_validate" name="next_of_kin_firstname" value="" data-rule="immigration" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Address<span class="text-danger"> *</span></label>
+											<input type="text" class="form-control pos_validate" name="next_of_kin_address" value="" data-rule="immigration"/>
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Mobile number<span class="text-danger"> *</span></label>
+											<div class="input-group mb-3">
+												<div class="input-group-prepend">
+													<select class="form-control select-dialingcode pos_validate" name="dialing_code_nextofkin" data-rule="immigration" style="width: 200px;">
+														<option value="">Dialing Code</option>
+													</select>
+													<span class="validation_error div_hidden_clone"></span>
+												</div>
+												<input type="text" class="form-control pos_validate" name="next_of_kin_mobile" value="" data-rule="immigration" onkeypress="return restrictMobileNumber(event)" maxlength="13" data-float=".1" />
+												<span class="validation_error validation_inpgrp_error"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="check_in_header panel-heading"><span>2.1</span> Family members traveling with you</div>
+							<div class="panel-body">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Family Members with you<span class="text-danger"> *</span></label>
+										<select name="total_family_members" id="select-familymembers" class="form-control pos_validate" data-rule="immigration">
+											<option value="">Select</option>
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div id="family-relation-cloned"></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" id="btn-cancel-ident">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Next</button>
+					</div>
+					<input type="hidden" class="updated-user-id" name="user_id" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="div_hidden_clone" id="state-select-input-clone">
+	<div class="form-group">
+		<label>State/Province/Region<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate identi_state" id="select-identi-states" name="state" data-rule="immigration">
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+
+<div class="div_hidden_clone" id="state-text-input-clone">
+	<label>State/Province/Region<span class="text-danger"> *</span></label>
+	<input type="text" class="form-control pos_validate identi_state" name="state" value="" data-rule="immigration" />
+	<span class="validation_error"></span>
+</div>
+
+<div class="div_hidden_clone" id="family-relation-panel">
+	<div id="family-relation-div">
+		<div class="row travel_contact_div" id="family-relation-clone-0">
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>Last Name<span class="text-danger"> *</span></label>
+					<input type="text" class="form-control pos_validate" id="family-relation-lastname-0" name="family_relation_lastname[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>First Name<span class="text-danger"> *</span></label>
+					<input type="text" class="form-control pos_validate" id="family-relation-name-0" name="family_relation_name[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>Middle Name</label>
+					<input type="text" class="form-control pos_validate" id="family-relation-middlename-0" name="family_relation_middlename[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>Home Address<span class="text-danger"> *</span></label>
+					<input type="text" class="form-control pos_validate" name="family_relation_address[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label>Date Of Birth<span class="text-danger"> *</span></label>
+				<div class="form-group custom_dob_container">
+					<div id="family-relation-dob-container-0" class="form-control text-center"></div>
+					<input type="hidden" id="family-my-dob-rel-0" name="family_relation_contact_dob[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Passport Number<span class="text-danger"> *</span></label>
+					<input type="text" class="form-control pos_validate special_char_input" id="family-relation-passport-0" name="family_relation_passport[0]" value="" data-rule="immigration" />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label>Relation<span class="text-danger"> *</span></label>
+					<input type="text" class="form-control pos_validate" id="family-relation-relation-0" name="family_relation_relation[0]" value="" data-rule="immigration" placeholder="Son, Wife, etc..." />
+					<span class="validation_error"></span>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<button type="button" class="btn btn-sm btn-success" id="append-family-relation" style="margin-top: 9%;">
+						ADD MORE&nbsp;&nbsp;<i class="fa fa-plus"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row div_hidden_clone" id="other-purpose-visit">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Other (Please state)<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate stay_other_purpose_of_visit" name="stay_other_purpose_of_visit" value="" data-rule="immigration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+
+<div class="currently_located_div" id="currently_located_1">
+	<div class="row">
+		<div class="col-md-4 state_city_row">
+			<div class="form-group">
+				<label>Country Traveling from<span class="text-danger"> *</span></label>
+				<select class="form-control pos_validate select_country" id="on-land-country" name="on_land_country" data-rule="immigration">
+				</select>
+				<span class="validation_error"></span>
+			</div>
+		</div>
+		<div class="col-md-4 state_city_row" id="on-land-state-cloned">
+			<div class="form-group">
+				<label>State<span class="text-danger"> *</span></label>
+				<input type="text" class="form-control pos_validate" id="input-onland-states" name="on_land_state" data-rule="immigration">
+				<span class="validation_error"></span>
+			</div>
+		</div>
+		<div class="col-md-4 state_city_row">
+			<div class="form-group">
+				<label>City<span class="text-danger"> *</span></label>
+				<input type="text" class="form-control pos_validate" name="on_land_city" value="" data-rule="immigration">
+				<span class="validation_error"></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Port of Arrival<span class="text-danger"> *</span></label>
+				<select class="form-control pos_validate" id="identi-airport-code" name="airport_code" data-rule="immigration">
+					<option value="">Select</option>
+					<option value="KIN">Norman Manley International Airport (KIN)</option>
+					<option value="MBJ">Sangster International Airport (MBJ)</option>
+					<option value="OCJ">Ian Fleming International Airport (OCJ)</option>
+				</select>
+				<span class="validation_error"></span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Flight Name<span class="text-danger"> *</span></label>
+				<select name="f2_flight_name" id="identi-flight-name" class="form-control pos_validate" data-rule="immigration">
+					<option value="">Select</option>
+					<option value="KG">Aerogaviota</option><option value="AC">Air Canada</option><option value="RV">Air Canada Rouge</option><option value="TS">Air Transat</option><option value="AA">American Airlines</option><option value="BA">British Airways</option><option value="BW">Caribbean Airlines</option><option value="KX">Cayman Airways</option><option value="DE">Condor</option><option value="CM">Copa Airlines</option><option value="DL">Delta Air Lines</option><option value="OJ">Fly Jamaica</option><option value="F9">Frontier Airlines</option><option value="JY">InterCaribbean Airways</option><option value="B6">JetBlue Airways</option><option value="LL">Miami Air</option><option value="NO">Neos Air</option><option value="NW">Northwest Airlines</option><option value="NWS">Norwind Airlines</option><option value="OJ">Overland Airways</option><option value="OBS">Orbest Airlines</option><option value="private">Private</option><option value="WN">Southwest Airlines</option><option value="NK">Spirit Airlines</option><option value="SY">Sun Country Airlines</option><option value="WG">Sunwing Airlines</option><option value="WQ">Swift Air</option><option value="WO">Swoop Airline</option><option value="DK">Thomas Cook</option><option value="TOM">Thomson Airways</option><option value="OR">TUIFly Netherlands</option><option value="TB">TUIFly Belgium</option><option value="UA">United Airlines</option><option value="VS">Virgin Atlantic Airways</option><option value="WS">WestJet</option>
+				</select>
+				<span class="validation_error"></span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Flight Number<span class="text-danger"> *</span></label>
+				<input type="text" class="form-control pos_validate" id="identi-flight-number" name="f2_flight_number" value="" data-rule="immigration" maxlength="4">
+				<span class="validation_error"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="div_hidden_clone" id="on-land-state-div">
+	<div class="form-group">
+		<label>State<span class="text-danger"> *</span></label>
+		<select class="form-control pos_validate" id="select-onland-states" name="on_land_state" data-rule="immigration">
+		</select>
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="row currently_located_div" id="currently_located_2">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Name of the Vessel<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" id="identi-vessel-name" name="vessel_name" value="" data-rule="immigration">
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Type of Vessel<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate" id="identi-vessel-type" name="vessel_type" data-rule="immigration">
+				<option value="">Select</option>
+				<option value="Cruise ship">Cruise ship</option>
+				<option value="Pleasure boat">Pleasure boat</option>
+				<option value="Cargo ship">Cargo ship</option>
+				<option value="Fishing vessel">Fishing vessel</option>
+				<option value="Military">Military</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Location of the Vessel<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" id="identi-vessel-location" name="vessel_location" value="" data-rule="immigration">
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Port of Arrival<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate" id="identi-airport-code" name="airport_code" data-rule="immigration">
+				<option value="">Select</option>
+				<option value="Sea Port">Sea Port</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+
+<div class="div_hidden_clone" id="uktraveldate-clone">
+	<div class="form-group">
+		<label><span class="last_date_in_uk_label">Date of your last visit to UK</span><span class="text-danger"> *</span></label>
+		<input type="text" class="form-control pos_validate last_date_in_uk" name="last_date_in_uk" value="" readonly="true" data-rule="immigration">
+		<span class="validation_error"></span>
+	</div>
+</div>
+
+<input type="hidden" name="family_relation_clone_id" id="family-relation-clone-id" value="0" />
+
+<script type="text/javascript">
+
+	if(applicationSession.checkCookie('touristSessionUser')) {
+		var sessionUser = applicationSession.getCookie('touristSessionUser');
+		$('.updated-user-email').val(sessionUser.email);
+		$('.updated-user-id').val(sessionUser.id);
+	}
+
+	appDateOfBirth.createField({
+		containerId : 'dob-container',
+		inputId: 'my-dob',
+		dayId: 'select-dob-day',
+		monthId: 'select-dob-month',
+		yearId: 'select-dob-year'
+	});
+
+	appDateOfBirth.createField({
+		containerId : 'family-relation-dob-container-0',
+		inputId: 'family-my-dob-rel-0',
+		dayId: 'select-dob-day-family-rel-0',
+		monthId: 'select-dob-month-family-rel-0',
+		yearId: 'select-dob-year-family-rel-0'
+	});
+
+
+	//initiateDatePickerNotRestrict('datepicker');
+
+
+	/**
+	* Submit identification form
+	*/
+	$(document).on('submit', '#identification-form', function(e) {
+		e.preventDefault();
+
+		var countries_travelled = $('#countries-travelled').val();
+		if(parseInt(countries_travelled.length) == 0) {
+			dataTable.showNotificationMessage(2, "Please choose the visited countries");
+			return false;
+		}
+
+		if($("input:radio[name=currently_located]:checked").length == 0) {
+			dataTable.showNotificationMessage(2, "Please choose the currently located option");
+			return false;
+		}
+
+		submitIdentificationForm();
+	});
+
+	/**
+	* currently located
+	*/
+	$(document).on('click', '.currently_located', function() {
+		var value = $(this).val();
+		var cloned = $('#currently_located_'+value).clone();
+		$('#currently-located-cloned').empty();
+		if(!$('#currently-located-cloned').html()) {
+			$('#currently-located-cloned').append(cloned);
+			$('#currently-located-cloned').find('.currently_located_div').removeClass('currently_located_div');
+		}
+	});
+
+	$(document).on('change','#select-familymembers',function() {
+		var value = $(this).val();
+		if(!parseInt(value)) {
+			$('#family-relation-cloned').empty();
+			$('#family-relation-clone-id').val(0);
+		} else {
+			if(!$('#family-relation-cloned').html()) {
+				var cloned = $('#family-relation-panel').clone();
+				$('#family-relation-cloned').append(cloned);
+				$('#family-relation-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+				openModal('travelNotifyModal');
+			}
+		}
+	});
+
+	/**
+	* Append c5 relation clone
+	*/
+	$(document).on('click', '#append-family-relation', function() {
+		var incremental_id = $('#family-relation-clone-id').val();
+		incremental_id = parseInt(incremental_id) + 1;
+		$('#family-relation-clone-id').val(incremental_id);
+		var contact = '<div class="row travel_contact_div" id="family-relation-clone-'+incremental_id+'">'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Last Name<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="family-relation-lastname-'+incremental_id+'" name="family_relation_lastname['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>First Name<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="family-relation-name-'+incremental_id+'" name="family_relation_name['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Middle Name</label>'+
+		'<input type="text" class="form-control pos_validate" id="family-relation-middlename-'+incremental_id+'" name="family_relation_middlename['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Home Address<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" name="family_relation_address['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<label>Date Of Birth<span class="text-danger"> *</span></label>'+
+		'<div class="form-group custom_dob_container">'+
+		'<div id="family-relation-dob-container-'+incremental_id+'" class="form-control text-center"></div>'+
+		'<input type="hidden" id="family-my-dob-rel-'+incremental_id+'" name="family_relation_contact_dob['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<label>Passport Number<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate special_char_input" id="family-relation-passport-'+incremental_id+'" name="family_relation_passport['+incremental_id+']" value="" data-rule="immigration" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-2">'+
+		'<div class="form-group">'+
+		'<label>Relation<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="family-relation-relation-'+incremental_id+'" name="family_relation_relation['+incremental_id+']" value="" data-rule="immigration" placeholder="Son, Wife, etc..." />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-2">'+
+		'<div class="form-group">'+
+		'<button type="button" class="btn btn-sm btn-danger remove-family-relation-clone" data-clone_id="'+incremental_id+'" style="margin-top: 9%;">'+
+		'REMOVE&nbsp;&nbsp;<i class="fa fa-minus"></i>'+
+		'</button>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#family-relation-div').append(contact);
+		appDateOfBirth.createField({
+			containerId : 'family-relation-dob-container-'+incremental_id,
+			inputId: 'family-my-dob-rel-'+incremental_id,
+			dayId: 'select-dob-day-family-rel-'+incremental_id,
+			monthId: 'select-dob-month-family-rel-'+incremental_id,
+			yearId: 'select-dob-year-family-rel-'+incremental_id
+		});
+	});
+
+	/**
+	* Remove clone of contact div
+	*/
+	$(document).on('click','.remove-family-relation-clone',function() {
+		var current = this;
+		var clone_id = $(this).data('clone_id');
+		swal({
+			title: "Are you sure?",
+			text: "",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				current.closest('div#family-relation-clone-'+clone_id).remove();
+			}
+		});
+
+	});
+
+	$(document).on('change','.identi_country_of_issue',function() {
+		var value = $(this).val();
+		if(value != '') {
+			var visa_required = $('option:selected', this).attr('visa-required');
+			if(parseInt(visa_required) == 1) {
+				openModal('visaNotifyModal');
+			}
+		}
+	});
+
+	$(document).on('change','#on-land-country',function() {
+		var value = $(this).val();
+		var countryOptions = ["38","231","232"];
+
+		if(countryOptions.indexOf(value) >= 0) {
+			var request  = {
+				'url'  	   		  : "states?country_id="+value,
+				'type' 	   		  : "GET",
+				'data' 	   		  : {},
+				'dataType' 		  : "json",
+				'success_message' : false,
+				'error_message'   : true,
+				'ajax_loader'	  : true,
+				'window_reload'	  : false
+			}
+			dataTable.makeRequest(request, processCurrentResponse);
+			function processCurrentResponse(response, status_code) {
+				if(status_code == posConfig.response_code.ok) {
+					var data = response.data;
+					var options = '<option value="">Select</option>';
+					var states_list = data.states;
+					for(i in states_list) {
+						options += "<option value='"+states_list[i].name+"'>"+states_list[i].name+"</option>";
+					}
+
+					$('#select-onland-states').empty();
+					$('#select-onland-states').append(options);
+
+					var cloned = $('#on-land-state-div').clone();
+					$('#on-land-state-cloned').html(cloned);
+					$('#on-land-state-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+				}
+			}
+		} else {
+			if(!$('form#identification-form #input-onland-states').length) {
+				var stateHtml = `<div class="form-group">
+				<label>State<span class="text-danger"> *</span></label>
+				<input class="form-control pos_validate" id="input-onland-states" name="on_land_state" data-rule="immigration">
+				<span class="validation_error"></span>
+				</div>`;
+				$('#on-land-state-cloned').html(stateHtml);
+			}
+		}
+	});
+
+	$(document).on('change', '.passport_confirm', function() {
+		var value = $(this).val();
+		var fieldClass = $(this).attr('confirm-input');
+		$('#'+fieldClass).val(value);
+	});
+
+	$(document).on('change', '#select-dob-day', function() {
+		populateDateFieldOnPassportConfirm();
+	});
+
+	$(document).on('change', '#select-dob-month', function() {
+		populateDateFieldOnPassportConfirm();
+	});
+
+	$(document).on('change', '#select-dob-year', function() {
+		populateDateFieldOnPassportConfirm();
+	});
+
+	function populateDateFieldOnPassportConfirm() {
+		var day = $('#select-dob-day').val();
+		var month = $('#select-dob-month').val();
+		var year = $('#select-dob-year').val();
+		var date = day+"-"+month+"-"+year;
+		if(day == "" && month == "" && year == "") {
+			date = "";
+		}
+		$('#select-dob-day-c5-pass').val(day);
+		$('#select-dob-month-c5-pass').val(month);
+		$('#select-dob-year-c5-pass').val(year);
+
+		$('#c5-my-dob-pass').val(date);
+		$('#c5-my-dob-pass').next().html('');
+	}
+
+	$(document).on('change', '#stay-purpose-visit', function() {
+		var value = $(this).val();
+
+		if(value == 8) {
+			if(!$('#other-purpose-visit-cloned').html()) {
+				var cloned = $('#other-purpose-visit').clone();
+				$('#other-purpose-visit-cloned').append(cloned);
+				$('#other-purpose-visit-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+			}
+		} else {
+			$('#other-purpose-visit-cloned').empty();
+		}
+	});
+
+	$(document).on('change', '#countries-travelled', function() {
+		var ukProtocolResponse = checkUKProtocolExist();
+		cloneUKTravelDate(ukProtocolResponse);
+	});
+
+	/**
+	* cancel identification form
+	*/
+	$('#btn-cancel-ident').click(function(){
+		$('#immigration-identification').hide();
+		$('#immigration-registration').show();
+	});
+
+</script>
+<style type="text/css">
+	@media (max-width: 768px) {
+		.select-dialingcode {
+			width: 100px !important;
+		}
+	}
+</style>

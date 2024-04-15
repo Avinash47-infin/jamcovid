@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MOH - Immigration Certificate</title>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<link rel="stylesheet" type="text/css" href="js/custom/toastr/toastr.min.css" />
+	<link href="css/custom-style.css" rel="stylesheet" />
+	<link href="js/custom/immigration_certificate/style.css?v=1" rel="stylesheet" />
+	<link rel="stylesheet" href="js/custom/immigration_certificate/bootstrap.min.css">
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/custom/immigration_certificate/popper.min.js"></script>
+	<script type="text/javascript" src="js/custom/immigration_certificate/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" href="images/favicon.png" type="image/gif" sizes="32x32">
+	<script src="js/custom/qrcode/qrcode.js"></script>
+	<script src="js/custom/immigration_certificate/html2canvas.js"></script>
+	<script type="text/javascript" src="js/custom/cookie.js"></script>
+	<script type="text/javascript">
+		if(!applicationSession.checkCookie('Authorization')) {
+			window.location.href = './';
+		}
+	</script>
+</head>
+<body id="certificate-content">
+	<header class="breathing-space text-center">
+		<img src="img/logo.png" alt="logo" class="logo">
+	</header>
+	<div class="corona-preloader-backdrop">
+		<div class="corona-page-preloader">Loading...</div>
+	</div>
+	<div id="certificate-content-section" style="display: none;">
+		<div class="breathing-space">
+			<div class="row">
+				<div class="col-md-12 mt-4">
+					<div class="panel-heading text-center" id="certificate-panel-header" style="background: #ffff00;"><b>TRAVEL AUTHORISATION FOR JAMAICA</b></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="breathing-space">
+			<div class="row">
+				<div class="col-sm-8" style="width: 50%">
+					<p>Your application has been approved. You are hereby authorised to travel to Jamaica.</p>
+					<p><b>Please ensure you retain either a printed or electronic copy of this authorisation as you will be required to provide it to check in for and board your flight or vessel to Jamaica. <span class="highriskcty_content text-danger" style="display: none;">You will also be required present your negative COVID-19 PCR or Antigen test certificate to check in and board your flight or vessel. If your travel date is on or before March 10, 2021, your test must have been within 10 days of your date of travel. If your travel date is on or after March 11, 2021, your test must have been within 3 days of your date of travel. The name and date of birth on the test certificate must match those on your passport. Please retain this travel authorisation and your negative COVID-19 test certificate for the duration of your stay in Jamaica.</span></b></p>
+					<p><b>Note that this travel authorisation allows only the holder of the passport listed below to enter Jamaica. If you intend to travel with other persons, including minors, each person must obtain a separate travel authorisation.</b></p>
+				</div>
+				<div class="col-sm-2 lowriskcty_content text-center" style="width: 20%;font-size: 12px; color: #00b02a; font-weight: 600; display: none;">
+					<img src="img/approved-icon.png" alt="barcode-icon">
+				</div>
+				<div class="col-sm-2 highriskcty_content text-center" style="width: 20%;font-size: 12px; color: #920000; font-weight: 600; display: none;">
+					<img src="img/testreq-icon.jpg" alt="barcode-icon">
+					<div style="max-width: 80%;">Negative COVID-19 test result is required</div>
+				</div>
+				<div class="col-sm-2 text-center" style="width: 10%">
+					<div id="certificate-qrcode"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="breathing-space mt-2">
+			<div class="card shadow">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-4 col-recipt text-left">
+							<b>Name</b>
+						</div>
+						<div class="col-sm-4 col-recipt-col text-center">
+							:
+						</div>
+						<div class="col-sm-4 font-weight-bold col-recipt text-left">
+							<span class="immig_name"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-recipt text-left">
+							<b>Date Of Birth</b>
+						</div>
+						<div class="col-sm-4 col-recipt-col text-center">
+							:
+						</div>
+						<div class="col-sm-4 font-weight-bold col-recipt text-left">
+							<span class="immig_dob"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 col-recipt text-left">
+							<b>Passport Number</b>
+						</div>
+						<div class="col-sm-4 col-recipt-col text-center">
+							:
+						</div>
+						<div class="col-sm-4 font-weight-bold col-recipt text-left">
+							<span class="immig_passportno"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 col-recipt text-left">
+							<b>Application Reference Number</b>
+						</div>
+						<div class="col-sm-4 col-recipt-col text-center">
+							:
+						</div>
+						<div class="col-sm-4 font-weight-bold col-recipt text-left">
+							<span class="immig_applicationno"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 col-recipt text-left">
+							<b>Expiry Date</b>
+						</div>
+						<div class="col-sm-4 col-recipt-col text-center">
+							:
+						</div>
+						<div class="col-sm-4 font-weight-bold col-recipt text-left">
+							<span class="immig_expiryat"></span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="breathing-space mt-3" id="immig-certificate-consent">
+			<img src="images/immigration/certificate_bg.png" alt="Notebook" style="width:100%;">
+			<div class="tourist_certificate_content" style="display: none;">
+				<p class="font-weight-bold">TERMS AND CONDITIONS OF YOUR TRAVEL AUTHORISATION</p>
+				<p>You are approved to enter Jamaica at this time subject to the following terms and conditions to which you consented as part of your application:</p>
+				<p class="font-weight-bold">Travel Costs</p>
+				<p>You acknowledge you are traveling to Jamaica and bear all the costs for travel to and from the destination as well as costs while you are in-country should you fall ill. This can include, but is not limited to the following:</p>
+				<ul>
+					<li>COVID-19 test</li>
+					<li>Medical services</li>
+					<li>Hospital services</li>
+					<li>Medical transportation services</li>
+					<li>Medical evacuation services</li>
+					<li>Quarantine/isolation facilities and services</li>
+				</ul>
+				<p class="font-weight-bold">Health Screening and Risk Assessment at Port of Entry</p>
+				<p>Upon arrival in Jamaica, you will be required to undergo a health screening and risk assessment by the health authorities.  The health screening will include checking your temperature, observation of your symptoms, if any, as well as an interview by a health officer.</p>
+				<p>You understand that you may be subject to testing if you are assessed as high risk either as a result of coming from a country designated as high risk for COVID-19 transmission based on classification by the World Health Organisation or due to other risk factors such as exhibiting symptoms or exposure to persons who have tested positive.  You understand that you may still be required to be tested in Jamaica based on a risk assessment by the health authorities even if you were required to present a negative COVID-19 test certificate prior to your arrival.</p>
+				<p class="font-weight-bold">Testing for COVID-19</p>
+				<p>You also consent to the following COVID-19 testing protocol, should you be required to be tested by the health authorities:</p>
+				<p>Naso-pharyngeal and oro-pharyngeal swabbing on my arrival. If your initial test for COVID-19 is positive, or you develop any symptom of COVID-19 during your period of quarantine, you may be placed in mandatory isolation for 14 days or until you have fully recovered. You agree to further samples for testing being taken during your period of isolation.</p>
+				<p class="font-weight-bold">Stay in COVID-19 Resilient Corridor</p>
+				<p>You understand that, if you are required to be tested on arrival, you will be required to await your tests results under quarantine in your room at the hotel/resort.  If you are not required to be tested or if your test is negative, you understand that you will be required for the duration of your stay in Jamaica to remain in the hotel/resort within the “COVID-19 Resilient Corridor”, a defined geographical area within Jamaica designated for tourism purposes.  You may however visit attractions certified by the Jamaica Tourist Board within the “COVID-19 Resilient Corridor” provided that you travel to and from the attractions on transportation licensed under the Tourist Board Act, adhere to the relevant protocols for attractions, and remain with the family or group with which you travelled to the attractions.  You must obtain permission from the health authorities to leave the “COVID-19 Resilient Corridor” and, if such permission is granted, you will be required to be in quarantine for a period of 14 days from your date of arrival in Jamaica.</p>
+				<p class="font-weight-bold">Isolation</p>
+				<p>If you are required to be tested for COVID-19 and your test is positive, you consent to being isolated either at your hotel/resort or in a government facility as determined by the health authorities.</p>
+				<p class="font-weight-bold">Governing Laws and Regulations</p>
+				<p>The above are governed by the following applicable Laws and Regulations of Jamaica:</p>
+				<ul>
+					<li>The Constitution of Jamaica</li>
+					<li>The Disaster Risk Management Act</li>
+					<li>The Public Health Act</li>
+					<li>The Tourist Board Act</li>
+					<li>The Aliens Act</li>
+					<li>Immigration Restrictions (Commonwealth Citizens Act)</li>
+				</ul>
+			</div>
+			<div class="others_certificate_content">
+				<p class="font-weight-bold">TERMS AND CONDITIONS OF YOUR TRAVEL AUTHORISATION</p>
+				<p>You are approved to enter Jamaica at this time subject to the following terms and conditions to which you consented as part of your application:</p>
+				<p><b>Travel Costs</b></p>
+				<p>You acknowledge you are traveling to Jamaica and bear all the costs for travel to and from the destination as well as costs while you are in-country should you fall ill. This can include, but is not limited to the following:</p>
+				<ul>
+					<li>COVID-19 test</li>
+					<li>Medical services</li>
+					<li>Hospital services</li>
+					<li>Medical transportation services</li>
+					<li>Medical evacuation services</li>
+					<li>Quarantine/isolation facilities and services</li>
+				</ul>
+				<p><b>Health Screening, Risk Assessment at Port of Entry</b></p>
+				<p>Upon arrival in Jamaica, you will be required to undergo a health screening and risk assessment by the health authorities.  The health screening will include checking your temperature, observation of your symptoms, if any, as well as an interview by a health officer.</p>
+				<p><b>Testing, Quarantine and Isolation</b></p>
+				<p>You understand you may be required to be tested at the airport or other designated facility and then await your test results under quarantine in your room at your hotel/intended address or in a government facility as determined by the health authorities.  You understand that you may still be required to be tested in Jamaica based on a risk assessment by the health authorities even if you were required to present a negative COVID-19 test certificate prior to your arrival.</p>
+				<p>If your test is positive, you will be isolated either at your hotel/intended address or in a government facility as determined by the health authorities.</p>
+				<p>If your test is negative, you will continue to be under quarantine for 14 days at your hotel/intended address.</p>
+				<p><b>Testing for COVID-19</b></p>
+				<p>You also consent to the following COVID-19 testing protocol, should you be required to be tested by the health authorities:</p>
+				<p>Naso-pharyngeal and oro-pharyngeal swabbing on your arrival. If your initial test for COVID-19 is positive, or you develop any symptom of COVID-19 during your period of quarantine, you may be placed in mandatory isolation until you have fully recovered. You agree to further samples for testing being taken during your period of isolation.</p>
+				<p><b>Quarantine or Isolation at Hotel/Intended Address</b></p>
+				<p>While you are quarantined or placed in isolation at your hotel/intended address, you further consent for the period of your quarantine or isolation, to the following:</p>
+				<ul>
+					<li>Wearing on your person a tracking watch, wristband or other device provided by the Government in accordance with the instructions to be given on your arrival;</li>
+					<li>Keeping a smart phone with you, charged at all times, with the Jamcovid19 mobile app downloaded and GPS permissions enabled;</li>
+					<li>Submitting health status information and video check-ins on the jamcovid19 mobile app as required; and</li>
+					<li>Having your location tracked to conﬁrm that you have not left your hotel/intended address without permission from the Medical Officer.</li>
+				</ul>
+				<p><b>Governing Laws and Regulations</b></p>
+				<p>The above are governed by the following applicable Laws and Regulations of Jamaica:</p>
+				<ul>
+					<li>The Constitution of Jamaica</li>
+					<li>The Disaster Risk Management Act</li>
+					<li>The Public Health Act</li>
+					<li>The Tourist Board Act</li>
+					<li>The Aliens Act</li>
+					<li>Immigration Restrictions (Commonwealth Citizens Act)</li>
+				</ul>
+			</div>
+			<div class="business_certificate_content" style="display: none;">
+				<p class="font-weight-bold">TERMS AND CONDITIONS OF YOUR TRAVEL AUTHORISATION</p>
+				<p>You are approved to enter Jamaica at this time subject to the following terms and conditions to which you consented as part of your application:</p>
+				<p class="font-weight-bold">Travel Costs</p>
+				<p>You acknowledge you are traveling to Jamaica and bear all the costs for travel to and from the destination as well as costs while you are in-country should you fall ill. This can include, but is not limited to the following:</p>
+				<ul>
+					<li>COVID-19 test</li>
+					<li>Medical services</li>
+					<li>Hospital services</li>
+					<li>Medical transportation services</li>
+					<li>Medical evacuation services</li>
+					<li>Quarantine/isolation facilities and services</li>
+				</ul>
+				<p><b>Health Screening, Risk Assessment at Port of Entry</b></p>
+				<p>Upon arrival in Jamaica, you will be required to undergo a health screening and risk assessment by the health authorities.  The health screening will include checking your temperature, observation of your symptoms, if any, as well as an interview by a health officer.</p>
+				<p><b>Testing, Quarantine and Isolation</b></p>
+				<p>You understand you will be required to be tested at the airport or other designated facility and then await your test results under quarantine in your room at your hotel/intended address.</p>
+				<p>If your test is positive, you will be isolated either at your hotel/intended address or in a government facility as determined by the health authorities. If your test is negative, you will be allowed to leave your hotel/intended address only once per day to obtain food, medical supplies or medical services, and to conduct financial and business transactions, and then required to immediately return. You also understand that you should not meet with any person who is 5 years of age or older or take any form of transportation with another passenger, other than a person with whom you travelled to Jamaica. While under quarantine, you will not be allowed to leave the location where you are quarantined, unless permission is obtained from the Medical Officer.</p>
+				<p>You understand that you must adhere to all measures for controlling risk of spread that are in place in Jamaica such as washing/sanitization of hands, wearing of masks, gathering restrictions, etc.</p>
+				<p><b>Testing for COVID-19</b></p>
+				<p>You understand that you will still be required to be tested in Jamaica at your own expense even if you were required to present a negative COVID-19 test certificate prior to your arrival. You also consent to the following COVID-19 testing protocol:</p>
+				<p>Naso-pharyngeal and oro-pharyngeal swabbing on your arrival. If your initial test for COVID-19 is positive, or you develop any symptom of COVID-19 during your period of quarantine, you may be placed in mandatory isolation until you have fully recovered. You agree to further samples for testing being taken during your period of isolation.</p>
+				<p><b>Quarantine or Isolation at Hotel/Intended Address</b></p>
+				<p>While you are quarantined or placed in isolation at your hotel/intended address, you further consent for the period of your quarantine or isolation, to the following:</p>
+				<p>
+					<ul>
+						<li>Wearing on your person a tracking watch, wristband or other device provided by the Government in accordance with the instructions to be given on your arrival;</li>
+						<li>Keeping a smart phone with you, charged at all times, with the Jamcovid19 mobile app downloaded and GPS permissions enabled;</li>
+						<li>Submitting health status information and video check-ins on the jamcovid19 mobile app as required; and</li>
+						<li>Having your location tracked to conﬁrm that you have not left my hotel/intended address without permission from the Medical Officer.</li>
+					</ul>
+				</p>
+				<p><b>Governing Laws and Regulations</b></p>
+				<p>The above are governed by the following applicable Laws and Regulations of Jamaica:</p>
+				<ul>
+					<li>The Constitution of Jamaica</li>
+					<li>The Disaster Risk Management Act</li>
+					<li>The Public Health Act</li>
+					<li>The Tourist Board Act</li>
+					<li>The Aliens Act</li>
+					<li>Immigration Restrictions (Commonwealth Citizens Act)</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="breathing-space" id="download-print-option">
+			<div class="row">
+				<div class="col-sm-6 text-center">
+					<img src="img/download.svg" class="down-print-icon" id="download-certificate" style="cursor: pointer;">
+					Download
+				</div>
+
+				<div class="col-sm-6 text-center">
+					<img src="img/print.svg" class="down-print-icon" id="print-certificate" style="cursor: pointer;">
+					Print
+				</div>
+			</div>
+		</div>
+		<hr>
+		<p class="text-center text-uppercase"><b>HAVE A SAFE TRIP. WE LOOK FORWARD TO WELCOMING YOU TO JAMAICA!</b></p>
+	</div>
+	<div id="certificate-notfound-section" style="display: none;">
+		<div class="breathing-space mt-4">
+			<div class="row">
+				<div class="col-sm-12">
+					<p class="font-weight-bold">Download your travel authorization certificate by logging into your account with the same email ID. For Residents please visit <a href="https://jamcovid19.moh.gov.jm/" target="_blank">https://jamcovid19.moh.gov.jm</a> and for Tourists please visit <a href="https://www.visitjamaica.com" target="_blank">https://www.visitjamaica.com</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/custom/dataTable.js?v=1001"></script>
+	<script type="text/javascript" src="js/custom/field_rules.js"></script>
+	<script type="text/javascript" src="js/custom/config.js"></script>
+	<script type="text/javascript" src="js/custom/formValidation.js"></script>
+	<script type="text/javascript" src="js/custom/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="js/custom/sweet-alert/sweet-alert-2.1.2.min.js"></script>
+	<script type="text/javascript" src="js/custom/cookie.js"></script>
+	<script type="text/javascript" src="js/custom/daterange/moment.min.js"></script>
+
+	<script type="text/javascript">
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const reference_number = urlParams.get('reference_number')
+		var user = applicationSession.getCookie('touristSessionUser');
+		var requestData = {
+			'reference_number' : reference_number,
+			'user_id' 		   : user.id,
+			'email' 		   : user.email
+		}
+		var request  = {
+			'url'  	   		  : "immigrants/certificate-details",
+			'type' 	   		  : "POST",
+			'data' 	   		  : requestData,
+			'dataType' 		  : "json",
+			'success_message' : false,
+			'error_message'   : false,
+			'ajax_loader'	  : true,
+			'window_reload'	  : false,
+			'auth_required'   : true
+		}
+		dataTable.makeRequest(request, processCurrentResponse);
+		function processCurrentResponse(response, status_code) {
+			if(status_code == posConfig.response_code.ok) {
+				var responseData = response.data;
+				var immigrant = responseData.immigrant;
+				//console.log(immigrant);
+				$('.immig_name').html(immigrant.first_name+" "+immigrant.last_name);
+				$('.immig_dob').html(immigrant.dob);
+				$('.immig_passportno').html(immigrant.passport_number);
+				$('.immig_applicationno').html(immigrant.reference_no);
+				$('.immig_expiryat').html(immigrant.expiry_at);
+
+				generateQrCode(immigrant.reference_no);
+				changeConsentContent(parseInt(immigrant.purpose_of_visit), parseInt(immigrant.accommodation_type));
+				$('#certificate-content-section').show();
+
+				var countryOptions = ["232","60","143","30","171"];
+				var countryId = immigrant.country_id;
+				var dob = moment(immigrant.dob, "MMM DD,YYYY");
+				var age = moment().diff(dob, 'years');
+
+				if(immigrant.date_of_travel >= '2021-03-04') {
+					if(parseInt(age) < 12) {
+						$('.lowriskcty_content').show();
+						$('.highriskcty_content').hide();
+					} else {
+						$('.lowriskcty_content').hide();
+						$('.highriskcty_content').show();
+					}
+				} else if(countryOptions.indexOf(countryId) >= 0 && parseInt(age) > 12) {
+					$('.highriskcty_content').show();
+					$('.lowriskcty_content').hide();
+				} else {
+					$('.highriskcty_content').hide();
+					$('.lowriskcty_content').show();
+				}
+			} else {
+				var status = response.error ? response.error.code : "";
+				if(status == 1) { // not found
+					$('#certificate-notfound-section').show();
+				} else {
+					var html = '<h2 class="text-center text-primary mt-4">'+response.message+'</h2>';
+					$('#certificate-content-section').html(html);
+					$('#certificate-content-section').show();
+				}
+			}
+		}
+
+		function changeConsentContent(purpose_of_visit, accommodation_type) {
+			if(purpose_of_visit == 2) {
+				$('.tourist_certificate_content').show();
+				$('.business_certificate_content').hide();
+				$('.others_certificate_content').hide();
+			} else if(purpose_of_visit == 3) {
+				$('.business_certificate_content').show();
+				$('.tourist_certificate_content').hide();
+				$('.others_certificate_content').hide();
+			} else {
+				$('.others_certificate_content').show();
+				$('.tourist_certificate_content').hide();
+				$('.business_certificate_content').hide();
+			}
+		}
+
+		function generateQrCode(reference_no) {
+			var qrcode = new QRCode(document.getElementById("certificate-qrcode"), {
+				width : 150,
+				height : 150,
+			});
+			qrcode.makeCode(reference_no);
+			$('#certificate-qrcode').find('img').attr('crossorigin', 'anonymous');
+		}
+
+		$('#download-certificate').click(function(){
+			$('#download-print-option').hide();
+			const elm = document.getElementById('certificate-content');
+			html2canvas(elm, {
+				onrendered: function(canvas) {
+					$('#download-print-option').show();
+					var link = document.createElement('a');
+					link.download = 'certificate.png';
+					link.href = canvas.toDataURL('image/png');
+					link.click();
+				}
+			});
+		});
+
+		$('#print-certificate').click(function(){
+			$('#download-print-option').hide();
+			var data = $('#certificate-content').html();
+			var css = '<link href="css/custom-style.css" rel="stylesheet" /><link href="js/custom/immigration_certificate/style.css" rel="stylesheet" /><link rel="stylesheet" href="js/custom/immigration_certificate/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="css/style.css">';
+
+			var newWin=window.open('','Print-Window');
+			newWin.document.open();
+			newWin.document.write('<html>'+css+'<body onload="window.print()">'+data+'</body></html>');
+			newWin.document.close();
+			setTimeout(function(){newWin.close();},10);
+			$('#download-print-option').show();
+		});
+
+	</script>
+</body>
+</html>

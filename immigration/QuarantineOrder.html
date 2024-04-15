@@ -1,0 +1,787 @@
+<section>
+	<div class="non-resident-head non-resident-head-requests"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>6/7</span> Quarantine Order</div>
+				<form id="qtn-order-form" enctype="multipart/form-data">
+					<div class="panel-body">
+						<div id="quarantine-order-div" style="background: #fff !important;">
+							<div class="row" style="background: #fff !important;">
+
+								<div id="qobasic-content"></div>
+								<div id="qosign-content">
+									<div class="col-md-12" style="margin: 10px;">
+										<p style="font-size: 1rem;">
+											<b>This Quarantine Order is Issued by the Chief Medical Officer of Ministry of Health and Wellness of Jamaica:</b>
+										</p>
+									</div>
+
+									<div class="col-md-12" style="margin: 10px;">
+										<div class="row">
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<input type="text" class="qt_input" name="cmo_name" value="Dr. Jacquiline Bisasor-McKenzie" readonly="true" />
+														<span class="validation_error"></span>
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Name of the Chief Medical Officer</b></p>
+											</div>
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<input type="text" class="qt_input qo_date_field" name="cmo_certified_at" value="" placeholder="DD/MM/YYYY" readonly="true" />
+														<span class="validation_error"></span>
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Date</b></p>
+											</div>
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<img src="images/qtn-order/cmo_sign.png" alt="CMO Signature" style="max-width: 100%;border-bottom: 1px solid;">
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Signature of the Chief Medical Officer</b></p>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-12" style="margin: 10px;">
+										<p style="font-size: 1rem;">
+											<input type="checkbox" class="qt_cbox" name="quarantine_ord_agreement" value="1" checked="true" readonly="true">
+											<b>I will comply with the Terms and Conditions of this Quarantine Order.</b>
+										</p>
+									</div>
+
+									<div class="col-md-12" style="margin: 10px;">
+										<div class="row">
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<input type="text" class="qt_input pos_validate case_myself" name="case_myself" value="" data-rule="screening" readonly="true">
+														<span class="validation_error"></span>
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Name of the Traveler</b></p>
+											</div>
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<input type="text" class="qt_input qo_date_field" name="certified_at" value="" placeholder="DD/MM/YYYY" readonly="true" />
+														<span class="validation_error"></span>
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Date</b></p>
+											</div>
+											<div class="col-md-4">
+												<p style="font-size: 1rem;">
+													<span class="qt_input_group">
+														<img src="" class="signature_image" alt="signature" id="signature-img-1" style="display: none;">
+														<input type="text" name="signature_updated" class="qt_input pos_validate signature_updated-1" value="" data-rule="screening" data-target="#signature" data-toggle="modal" readonly="true">
+														<span class="validation_error"></span>
+													</span>
+												</p>
+												<p style="font-size: 1rem;"><b>Signature</b></p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-qtn-order', 'immigration-terms');">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Next</button>
+					</div>
+				</form>
+				<form id="qtn-order-transit-form">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<p>Please note that as a transit passenger you are not permitted to leave the airport. While in the airport, you are required to maintain social distance of 6 feet from other persons and to wear a mask fitted to cover your nose and mouth.</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-qtn-order', 'immigration-terms');">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Next</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="signature" tabindex="-1" role="dialog" aria-labelledby="notesLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="notesLabel">Signature Here</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="signature-pad" class="signature-pad">
+						<div class="signature-pad--body">
+							<canvas></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="save-png" class="btn btn-success">Add Signature</button>
+					<button type="button" id="sign-clear" class="btn btn-default clear" data-action="clear">Clear</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="div_hidden_clone" id="qtorder-rc-div" style="background: #fff !important;">
+		<div class="col-md-12 text-center">
+			<span>
+				<img src="images/qtn-order/screening_logo.png" alt="Logo" style="max-width: 100%;">
+			</span>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 2rem;"><b>FORM C</b></p>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 1.2rem;"><b>THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021 PARAGRAPH 5</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center" style="font-size: 1.2rem;"><b style="background: #f7caac;">STAY IN RESILIENT CORRIDOR</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>A RISK-BASED PROTOCOL HAS BEEN INTRODUCED REGARDING TESTING AND RESTRICTION ON MOVEMENTS FOR PREVENTION AND CONTROL OF COVID-19.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p>All persons arriving in Jamaica are required to undergo a health screening and risk assessment.</p>
+		</div>
+
+		<!-- <div class="col-md-12" style="margin: 10px;">
+			<div class="box qt_box" style="background: #f2f2f2;">
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>CATEGORY OF TRAVELLER :</b></p>
+						</div>
+						<div class="col-md-6">
+							<p style="font-size: 1rem;"><b>NON-NATIONAL VISITING JAMAICA FOR TOURISM AND STAY IN THE RESILIENT CORRIDOR</b></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>RISK CLASSIFICATION:</b></p>
+						</div>
+						<div class="col-md-4 qo_hish_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_rc" value="1" checked="true">
+								<b>HIGH RISK</b>
+							</p>
+						</div>
+						<div class="col-md-4 qo_low_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_rc" value="2" disabled="true">
+								<b>LOW RISK</b>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<input type="hidden" name="risk_classify_rc" value="1">
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p class="qt_box" style="font-size: 1rem; background: #f2f2f2;">
+				<b>CONTROL MEASURES FOR PERSONS WITH POSSIBLE EXPOSURE TO SARS_CoV2</b>
+			</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">You have, or might have, been exposed to the SARS_CoV2, virus that causes COVID19, through travel or contact. Infection by the SARS_CoV2 virus is an acute respiratory infection that may present with mild, moderate, or severe illness and may be fatal. The symptoms of acute respiratory infection include fever, cough, sore throat and difficulty breathing, and in some cases, diarrhoea, vomiting, abdominal pain, chest pain. If SARS_CoV2 spreads in the community, it would have severe public health consequences. In accordance with THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2020, the Medical Officer (Health), Medical Officer or public health officer has determined that:</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">In accordance with THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021, the Medical Officer (Health), Medical Officer or public health officer has determined that:</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">
+				<input type="checkbox" class="qt_cbox" name="high_risk_checkbox" value="1" checked="true" readonly>&nbsp;&nbsp;
+				You <u>pose a high risk</u> for the transmission of the SARS – CoV–2 (Coronavirus COVID-19) and the Medical Officer (Health), Medical Officer or public health officer has determined that you are required to <u>remain in the hotel property (or properties) stated below</u> for the duration of your stay except as provided under paragraph 5(6), leave that abode or place of residence to visit any place certified by the Tourism Product Development Company Limited to be COVID-19 Resilient and located within the area of any part of the Resilient Corridor or that is listed in the Appendix hereto. You are required to report symptoms to the health desk in your hotel or to the health department and based on assessment, you may be required to be tested for COVID-19.
+			</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">Hotel: &nbsp;&nbsp;
+				<span class="qt_input_group">
+					<input type="text" name="residential_address" class="qt_input pos_validate residential_address" data-rule="screening">
+					<span class="validation_error"></span>
+				</span>
+			</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>All persons who test positive OR become symptomatic are placed in isolation.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;"><b>Notwithstanding the requirements detailed above, the Medical Officer (Health) may impose new or different requirements if the Medical Officer (Health) is of the opinion that circumstances have changed to necessitate the imposition of new or different requirements.</b></p>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;">If you <b>fail to comply with these control measures, you commit an offence under Section 52 of the Disaster Risk Management Act</b> and shall be liable on summary conviction before a Judge of a Parish Court to a fine not exceeding one million dollars or to imprisonment for a term not exceeding twelve months.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">The staff of this Health Department remains available to provide assistance and counselling to you concerning your possible exposure to SARS_CoV2 and compliance with these control measures. Please refer to Health Alert Card <a href="https://jamcovid19.moh.gov.jm/HAC" target="_blank">https://jamcovid19.moh.gov.jm/HAC</a> for accessing the public health system.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;"><b>APPENDIX</b></p>
+			<p style="font-size: 1rem;">
+				<ol>
+					<li>Chukka Caribbean YS Falls Zipline Canopy</li>
+					<li>Reach Falls- Portland</li>
+					<li>Joy Spence Appleton Rum Experience- St. Elizabeth</li>
+					<li>Konoko Falls- St. Ann</li>
+					<li>Chukka Caribbean Adventures at White River Valley- St. Ann</li>
+					<li>Island Gully Falls- St. Ann</li>
+					<li>Chukka (Good Hope) Caribbean Adventure Tours- Trelawny</li>
+					<li>Paintball Jamaica- Trelawny</li>
+					<li>Animal Farm- Hanover</li>
+					<li>John’s Hall Adventure Tours- St. James</li>
+					<li>JamWest and Adventure Park Limited- Westmoreland</li>
+				</ol>
+			</p>
+		</div>
+	</div>
+
+	<div class="div_hidden_clone" id="qtorder-bs-div" style="background: #fff !important;">
+		<div class="col-md-12 text-center">
+			<span>
+				<img src="images/qtn-order/screening_logo.png" alt="Logo" style="max-width: 100%;">
+			</span>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 2rem;"><b>FORM D</b></p>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 1.2rem;"><b>THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021 PARAGRAPH 6</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center" style="font-size: 1.2rem;"><b style="background: #f7caac;">QUARANTINE ORDER FOR BUSINESS TRAVELER</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>A RISK-BASED PROTOCOL HAS BEEN INTRODUCED REGARDING TESTING AND RESTRICTION ON MOVEMENTS FOR PREVENTION AND CONTROL OF COVID-19.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p>All persons arriving in Jamaica are required to undergo a health screening and risk assessment.</p>
+		</div>
+
+		<!-- <div class="col-md-12" style="margin: 10px;">
+			<div class="box qt_box" style="background: #f2f2f2;">
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>CATEGORY OF TRAVELLER:</b></p>
+						</div>
+						<div class="col-md-6">
+							<p style="font-size: 1rem;"><b>NON-RESIDENT VISITING JAMAICA FOR BUSINESS</b></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>RISK CLASSIFICATION:</b></p>
+						</div>
+						<div class="col-md-4 qo_hish_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_bs" value="1" checked="true">
+								<b>HIGH RISK</b>
+							</p>
+						</div>
+						<div class="col-md-4 qo_low_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_bs" value="2" disabled="true">
+								<b>LOW RISK</b>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<input type="hidden" name="risk_classify_bs" value="1">
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p class="qt_box" style="font-size: 1rem; background: #f2f2f2;">
+				<b>CONTROL MEASURES FOR PERSONS WITH POSSIBLE EXPOSURE TO SARS_CoV2</b>
+			</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">You have, or might have, been exposed to the SARS_CoV2, virus that causes COVID19, through travel or contact. Infection by the SARS_CoV2 virus is an acute respiratory infection that may present with mild, moderate, or severe illness and may be fatal. The symptoms of acute respiratory infection include fever, cough, sore throat and difficulty breathing, and in some cases, diarrhoea, vomiting, abdominal pain, chest pain. If SARS_CoV2 spreads in the community, it would have severe public health consequences.</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">In accordance with THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021, the Medical Officer (Health), Medical Officer or public health officer has determined that:</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">
+				<input type="checkbox" class="qt_cbox" name="high_risk_checkbox" value="1" checked="true" readonly>&nbsp;&nbsp;
+				You <u>pose a high risk</u> for the transmission of the SARS – CoV–2 (Coronavirus COVID-19), and the Medical Officer (Health), Medical Officer or public health officer has determined that you require testing for COVID19 and you are to be quarantined until released by the Parish Health Department. If you test negative, the Parish Health Officer will advise you of your result and your release from quarantine. You are required to conduct your business as described in your travel application, adhering to the provisions of the Disaster Risk Management (Enforcement Measures) Order 2021, and the infection prevention and control guidelines as issued by the Ministry of Health & Wellness, including minimal interactions with the general public. You are required to report symptoms to the health desk in your hotel or to the health department and based on assessment, you may be required to repeat the COVID-19 test.
+			</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;"><b>Notwithstanding the requirements detailed above, the Medical Officer (Health) may impose new or different requirements if the Medical Officer (Health) is of the opinion that circumstances have changed to necessitate the imposition of new or different requirements.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">Address: &nbsp;&nbsp;
+				<span class="qt_input_group">
+					<input type="text" name="residential_address" class="qt_input pos_validate residential_address" data-rule="screening">
+					<span class="validation_error"></span>
+				</span>
+			</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>All persons who test positive OR become symptomatic are placed in isolation.</b></p>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;">If you <b>fail to comply with these control measures, you commit an offence under Section 52 of the Disaster Risk Management Act</b> and shall be liable on summary conviction before a Judge of a Parish Court to a fine not exceeding one million dollars or to imprisonment for a term not exceeding twelve months.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">The staff of this Health Department remains available to provide assistance and counselling to you concerning your possible exposure to SARS_CoV2 and compliance with these control measures. Please refer to Health Alert Card <a href="https://jamcovid19.moh.gov.jm/HAC" target="_blank">https://jamcovid19.moh.gov.jm/HAC</a> for accessing the public health system.</p>
+		</div>
+	</div>
+
+	<div class="div_hidden_clone" id="qtorder-home-div" style="background: #fff !important;">
+		<div class="col-md-12 text-center">
+			<span>
+				<img src="images/qtn-order/screening_logo.png" alt="Logo" style="max-width: 100%;">
+			</span>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 2rem;"><b>FORM B</b></p>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 1.2rem;"><b>THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021, PARAGRAPH 4 AND PARAGRAPH 7</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center" style="font-size: 1.2rem;"><b style="background: #f7caac;">HOME QUARANTINE ORDER</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>A RISK-BASED PROTOCOL HAS BEEN INTRODUCED REGARDING TESTING AND RESTRICTION ON MOVEMENTS FOR PREVENTION AND CONTROL OF COVID-19.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p>All persons arriving in Jamaica are required to undergo a health screening and risk assessment.</p>
+		</div>
+
+		<input type="hidden" name="risk_classify_home" value="1">
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p class="qt_box" style="font-size: 1.2rem; background: #f2f2f2;">
+				<b>CONTROL MEASURES FOR PERSONS WITH POSSIBLE EXPOSURE TO SARS-CoV2</b>
+			</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">You have, or might have, been exposed to the SARS-CoV2, virus that causes COVID-19, through travel or contact. Infection by the SARS-CoV2 virus is an acute respiratory infection that may present with mild, moderate, or severe illness and may be fatal. The symptoms of acute respiratory infection include fever, cough, sore throat and difficulty breathing, and in some cases, diarrhoea, vomiting, abdominal pain, chest pain. Symptoms may appear anywhere from two (2) to fourteen (14) days after exposure to the SARS-CoV2. People may be able to transmit infection beginning one day before they develop symptoms to up to 7 days after they get sick. The SARS-CoV2, virus is transmitted by spread most often by respiratory droplets from an infected person. If SARS-CoV2, virus spreads in the community, it would have severe public health consequences.</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">In accordance with the DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021, the Medical Officer (Health), Medical Officer or public health officer has determined that:</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">
+				As a result of your possible exposure to the SARS-CoV2, virus in accordance with THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2020, the following public health control measures detailed below are being implemented. These measures include contact with the &nbsp;&nbsp;
+				<span class="qt_input_group">
+					<input type="text" class="qt_input stay_health_depart" name="health_department_contact" value="" readonly="true">
+					<span class="validation_error"></span>
+				</span> Health Department at least twice daily to monitor for signs and symptoms of COVID-19, for the applicable number of days of quarantine, following the date of arrival into the country, as described in the Requirements section below. Based on assessment, you may be required to do a COVID19 Test. All persons who test positive OR become symptomatic are placed in isolation.
+			</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<div class="box qt_box">
+				<div class="box-header qt_box_header">
+					<h3 class="box-title" style="font-size: 1rem;"><b>REQUIREMENTS</b></h3>
+				</div>
+				<div class="box-body">
+					<p style="font-size: 1rem; margin: 10px;" class="margin">If you are Fully Vaccinated against COVID-19 (that is, you have received both doses of a vaccine required to be administered in two doses or one dose of a vaccine required to be administered as a single dose AND at least 14 days have passed since you received your last dose of the vaccine), you must <b>comply with these control measures</b> for 8 days following the date of landing in Jamaica.</p>
+					<p style="font-size: 1rem; margin: 10px;" class="margin">(For example, if you land on November 1st, <b>Day 1</b> of quarantine is November 2nd, and <b>Day 8</b> is November 9th. Your quarantine would end on November 10th.)</p>
+					<p style="font-size: 1rem; margin: 10px;" class="margin">If you are NOT Fully Vaccinated against COVID-19 (that is, you have NOT received both doses of a vaccine required to be administered in two doses or one dose of a vaccine required to be administered as a single dose AND at least 14 days have passed since you received your last dose of the vaccine), you must <b>comply with these control measures</b> for 14 days following the date of landing in Jamaica.</p>
+					<p style="font-size: 1rem; margin: 10px;" class="margin">(For example, if you land on November 1st, <b>Day 1</b> of quarantine is November 2nd, and <b>Day 14</b> is November 15th. Your quarantine would end on November 16th.)</p>
+					<p style="font-size: 1rem; margin: 10px;" class="margin">During the period of quarantine, you are required to:</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<span> - Remain at</span>&nbsp;&nbsp;
+						<span class="qt_input_group">
+							<input type="text" name="residential_address" class="qt_input pos_validate residential_address" data-rule="screening">
+							<span class="validation_error"></span>
+						</span> unless specifically authorized to leave by the Medical Officer (Health)
+					</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<div class="row">
+							<div class="col-md-12" style="font-size: 1rem; margin: 10px;">
+								<span> -</span>
+								Isolate yourself from others immediately if any symptoms develop and call the &nbsp;&nbsp;
+								<span class="qt_input_group">
+									<input type="text" name="health_department_contact_name" class="qt_input stay_health_depart" value="" readonly="true">
+									<span class="validation_error"></span>
+								</span>Health Department at (+1876)
+								<span class="qt_input_group">
+									<input type="text" name="health_department_contact_number" class="qt_input health_depart_contact" value="" readonly="true">
+									<span class="validation_error"></span>
+								</span>
+							</div>
+						</div>
+					</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>Record your temperature and symptoms every 12 hours using the App on your phone (or on the relevant form downloadable from <a href="https://jamcovid19.moh.gov.jm/formB" target="_blank">https://jamcovid19.moh.gov.jm/formB</a></p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>Be available for an in-person visit once per day by a health care worker</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>Report your temperature and symptoms a minimum of 2 time(s) per day to the Health Department nurse by phone</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>Keep a record of all visitors to your home and public places you visit if permitted by the Medical Officer (Health) using the App on your phone, or the form provided</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>Maintain a 6-feet (1m) distance from others</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>NOT take any form of public transportation (e.g. aircrafts, buses, taxi, car-pooling, etc.).</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>NOT go to public places (e.g. shopping centers, movie theatres, market, church) or public gatherings</p>
+					<p style="font-size: 1rem; margin: 10px;"> <span> - </span>NOT go to your workplace (working from home is permitted)</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;"><b>Notwithstanding the requirements detailed above, the Medical Officer (Health) may impose new or different requirements if the Medical Officer (Health) is of the opinion that circumstances have changed to necessitate the imposition of new or different requirements.</b></p>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;">If you <b>fail to comply with these control measures, you commit an offence under Section 52 of the Disaster Risk Management Act</b> and shall be liable on summary conviction before a Judge of a Parish Court to a fine not exceeding one million dollars or to imprisonment for a term not exceeding twelve months.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">The staff of this Health Department remains available to provide assistance and counselling to you concerning your possible exposure to SARS_CoV2 and compliance with these control measures. Please refer to Health Alert Card <a href="https://jamcovid19.moh.gov.jm/HAC" target="_blank">https://jamcovid19.moh.gov.jm/HAC</a> for accessing the public health system.</p>
+		</div>
+	</div>
+
+	<div class="div_hidden_clone" id="qtorder-facility-div" style="background: #fff !important;">
+		<div class="col-md-12 text-center">
+			<span>
+				<img src="images/qtn-order/screening_logo.png" alt="Logo" style="max-width: 100%;">
+			</span>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 2rem;"><b>FORM E</b></p>
+		</div>
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center qt_order_header" style="font-size: 1.2rem;"><b>THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021 PARAGRAPH 24B</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p class="text-center" style="font-size: 1.2rem;"><b style="background: #f7caac;">GOVERNMENT FACILITY QUARANTINE ORDER</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1.2rem;"><b>A RISK-BASED PROTOCOL HAS BEEN INTRODUCED REGARDING TESTING AND RESTRICTION ON MOVEMENTS FOR PREVENTION AND CONTROL OF COVID-19.</b></p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p>All persons arriving in Jamaica are required to undergo a health screening and risk assessment.</p>
+		</div>
+
+		<!-- <div class="col-md-12" style="margin: 10px;">
+			<div class="box qt_box" style="background: #f2f2f2;">
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>CATEGORY OF TRAVELLER :</b></p>
+						</div>
+						<div class="col-md-8">
+							<p style="font-size: 1rem;"><b>ALL</b></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<p style="font-size: 1rem;"><b>RISK CLASSIFICATION:</b></p>
+						</div>
+						<div class="col-md-4 qo_hish_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_facility" value="1" checked="true">
+								<b>HIGH RISK</b>
+							</p>
+						</div>
+						<div class="col-md-4 qo_low_risk">
+							<p style="font-size: 1rem;">
+								<input type="radio" class="qt_cbox" name="risk_classify_facility" value="2" disabled="true">
+								<b>LOW RISK</b>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<input type="hidden" name="risk_classify_facility" value="1">
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p class="qt_box" style="font-size: 1.2rem; background: #f2f2f2;">
+				<b>CONTROL MEASURES FOR PERSONS WITH POSSIBLE EXPOSURE TO SARS-CoV2</b>
+			</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">You have, or might have, been exposed to the SARS-CoV2, virus that causes COVID-19, through travel or contact. Infection by the SARS-CoV2 virus is an acute respiratory infection that may present with mild, moderate, or severe illness and may be fatal. The symptoms of acute respiratory infection include fever, cough, sore throat and difficulty breathing, and in some cases, diarrhoea, vomiting, abdominal pain, chest pain. Symptoms may appear anywhere from two (2) to fourteen (14) days after exposure to the SARS-CoV2. People may be able to transmit infection beginning one day before they develop symptoms to up to 7 days after they get sick. The SARS-CoV2, virus is transmitted by spread most often by respiratory droplets from an infected person. If SARS-CoV2, virus spreads in the community, it would have severe public health consequences.</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">In accordance with the DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2021, the Medical Officer (Health), Medical Officer or public health officer has determined that:</p>
+		</div>
+
+		<div class="col-md-12 margin" style="margin: 10px;">
+			<p style="font-size: 1rem;">As a result of your possible exposure to the SARS-CoV2, virus in accordance with THE DISASTER RISK MANAGEMENT (ENFORCEMENT MEASURES) ORDER, 2020, the following public health control measures detailed below are being implemented. These measures include being monitored by a public health officer in a designated Government facility at least twice daily to monitor for signs and symptoms of COVID-19 until released from the facility. You will be required to do a COVID-19 Test. All persons who test positive OR become symptomatic are placed in isolation.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<div class="box qt_box">
+				<div class="box-header qt_box_header">
+					<h3 class="box-title" style="font-size: 1rem;"><b>REQUIREMENTS</b></h3>
+				</div>
+				<div class="box-body">
+					<p style="font-size: 1rem; margin: 10px;" class="margin">You must <b>comply with these control measures while in the designated Government facility.</b></p>
+					<p style="font-size: 1rem; margin: 10px;" class="margin">During the quarantine period, you are required to:</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<span> - Remain at</span>&nbsp;&nbsp;
+						<span class="qt_input_group">
+							<input type="text" name="residential_address" class="qt_input pos_validate residential_address" data-rule="screening">
+							<span class="validation_error"></span>
+						</span> unless specifically authorized to leave by the Medical Officer (Health)
+					</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<div class="row">
+							<div class="col-md-12" style="font-size: 1rem; margin: 10px;">
+								<span> - Isolate yourself from others immediately if any symptoms develop and immediately advise the public health officer at the facility</span>
+							</div>
+						</div>
+					</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<div class="row">
+							<div class="col-md-12" style="font-size: 1rem; margin: 10px;">
+								<span> - Comply with the directions given or requirements imposed by the public health officer including the recording of your temperature and symptoms at least every 12 hours.</span>
+							</div>
+						</div>
+					</p>
+					<p style="font-size: 1rem; margin: 10px;">
+						<div class="row">
+							<div class="col-md-12" style="font-size: 1rem; margin: 10px;">
+								<span> - Maintain a 6-feet (1m) distance from others.</span>
+							</div>
+						</div>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;" class="margin"><b>Notwithstanding the requirements detailed above, the Medical Officer (Health) may impose new or different requirements if the Medical Officer (Health) is of the opinion that circumstances have changed to necessitate the imposition of new or different requirements.</b></p>
+		</div>
+
+		<div class="col-md-12 mt-1" style="margin: 10px;">
+			<p style="font-size: 1rem;">If you <b>fail to comply with these control measures, you commit an offence under Section 52 of the Disaster Risk Management Act</b> and shall be liable on summary conviction before a Judge of a Parish Court to a fine not exceeding one million dollars or to imprisonment for a term not exceeding twelve months.</p>
+		</div>
+
+		<div class="col-md-12" style="margin: 10px;">
+			<p style="font-size: 1rem;">The staff of this Health Department remains available to provide assistance and counselling to you concerning your possible exposure to SARS_CoV2 and compliance with these control measures. Please refer to Health Alert Card <a href="https://jamcovid19.moh.gov.jm/HAC" target="_blank">https://jamcovid19.moh.gov.jm/HAC</a> for accessing the public health system.</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var qtn_date = moment().format('DD/MM/YYYY');
+	$('.qo_date_field').val(qtn_date);
+
+	var signatureBlob;
+	var wrapper       = document.getElementById("signature-pad");
+	var clearButton   = document.getElementById("sign-clear");
+	var savePNGButton = document.getElementById("save-png");
+	var canvas        = wrapper.querySelector("canvas");
+	canvas.width 	  = 450;
+	var signaturePad  = new SignaturePad(canvas, {
+		backgroundColor: 'rgb(255, 255, 255)'
+	});
+
+	function resizeCanvas() {
+		var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+		canvas.width = 450;
+		canvas.getContext("2d");
+		signaturePad.clear();
+	}
+
+	window.onresize = resizeCanvas;
+
+	function download(dataURL, filename) {
+		if (navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") === -1) {
+			window.open(dataURL);
+		} else {
+			var blob = dataURLToBlob(dataURL);
+			var url = window.URL.createObjectURL(blob);
+
+			var a = document.createElement("a");
+			a.style = "display: none";
+			a.href = url;
+			a.download = filename;
+
+			document.body.appendChild(a);
+			a.click();
+
+			window.URL.revokeObjectURL(url);
+		}
+	}
+
+	function dataURLToBlob(dataURL) {
+		var parts = dataURL.split(';base64,');
+		var contentType = parts[0].split(":")[1];
+		var raw = window.atob(parts[1]);
+		var rawLength = raw.length;
+		var uInt8Array = new Uint8Array(rawLength);
+
+		for (var i = 0; i < rawLength; ++i) {
+			uInt8Array[i] = raw.charCodeAt(i);
+		}
+		return new Blob([uInt8Array], { type: contentType });
+	}
+
+	savePNGButton.addEventListener("click", function (event) {
+		if (signaturePad.isEmpty()) {
+			dataTable.showNotificationMessage(2, "Please provide a signature");
+		} else {
+			var dataURL = signaturePad.toDataURL();
+			signatureBlob = dataURLToBlob(dataURL);
+
+			$('#signature-img-1').attr('src', dataURL);
+			$('#signature-img-1').show();
+			$('.signature_updated-1').removeClass('error_border');
+			$('.signature_updated-1').next().html('');
+			delete screening_rule['signature_updated'];
+			$('#signature').modal('toggle');
+		}
+	});
+
+	clearButton.addEventListener("click", function (event) {
+		signaturePad.clear();
+		var type = $('#quarantine-type').val();
+		$('#signature-img-1').attr('src', '');
+		$('#signature-img-1').hide();
+
+		screening_rule['signature_updated'] = {
+			"required": {
+				"value": true,
+				"message": "Required!"
+			},
+		};
+	});
+
+	/**
+	* Submit Quarantine Form
+	*/
+	$('#qtn-order-form').on('submit', function (e) {
+		e.preventDefault();
+
+		var isAgree = checkQOAgreement();
+
+		if(!isAgree) {
+			dataTable.showNotificationMessage(2, "Please confirm the agreement");
+		} else {
+			submitQuarantineOrderForm();
+		}
+	});
+
+	function checkQOAgreement() {
+		var isAgree = true;
+		$("form#qtn-order-form :input[type=checkbox]").each(function(){
+			var input_name = $(this).attr("name");
+			if($('form#qtn-order-form input:checkbox[name="'+input_name+'"]:checked').length == 0) {
+				isAgree = false;
+				return;
+			}
+		});
+		return isAgree;
+	}
+
+	/**
+	* Submit Quarantine Form with transit type
+	*/
+	$('#qtn-order-transit-form').on('submit', function (e) {
+		e.preventDefault();
+
+		$('#immigration-qtn-order').hide();
+		$('#immigration-customs-c5').show();
+		scrollToTopPage();
+	});
+
+</script>
+<style type="text/css">
+	.qt_input {
+		border: none;
+		border-bottom: 1px solid;
+		text-align: center;
+		width: 350px;
+	}
+	.date_span {
+		max-width: 100%;
+	}
+	.qt_box {
+		border: 1px solid !important;
+		border-top-color: black !important;
+	}
+	.qt_box_header {
+		border-bottom: 1px solid !important;
+		background: #f2f2f2 !important;
+		white-space: nowrap;
+	}
+	.error_border {
+		border: 1px solid #FF0000 !important;
+	}
+	.qt_input_group {
+		display: inline-grid;
+	}
+	.div_hidden_clone {
+		display: none;
+	}
+	.header_border_line {
+		border-top: 3px solid;
+	}
+	.signature_image {
+		height: 50px;
+		max-width: 100%;
+	}
+
+	.residential_address {
+		width: 500px !important;
+	}
+
+	@media (max-width: 1024px){
+		.content-header {
+			margin: 2%;
+		}
+
+		.qt_order_header {
+			font-size: 1.2rem !important;
+		}
+
+		.residential_address {
+			width: 400px !important;
+		}
+	}
+</style>

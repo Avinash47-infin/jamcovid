@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+    Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options nosniff
+    RequestHeader set X-HTTPS 1
+    Header set Content-Security-Policy "script-src 'self' 'unsafe-eval' www.google.com www.gstatic.com maps.googleapis.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src *.amazonaws.com maps.googleapis.com maps.gstatic.com data: 'self'; frame-src: none;"
+    Header add Access-Control-Allow-Methods "HEAD, GET, POST, PUT, PATCH, DELETE"
+    Header add Access-Control-Allow-Origin "*"
+    Header add Access-Control-Expose-Headers "Authorization, X-Pagination-Total-Pages, X-Pagination-Current-Page, X-Pagination-Page-Limit, X-Pagination-Total-Items, Content-Type, content-type"
+
+</IfModule>

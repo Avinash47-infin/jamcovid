@@ -1,0 +1,23 @@
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header rejected-modal-header">
+			<h5 class="modal-title">IMPORTANT REMINDER</h5>
+		</div>
+		<div class="modal-body">
+			<div class="col-md-12">
+				<div style="font-size: 18px;">
+					<p>All residents of <span class="country_name"></span> who are 12 years of age or over, are required to present a COVID-19 PCR or Antigen negative test result that has been authorized by the United States FDA under an Emergency Use Authorization (EUA) or meets the standards of the WHO to the airline representative in order to check in for a flight to Jamaica. The date of the sample collection must be less than 10 days before the date of travel.</p>
+					<p>Tests must be completed at a CLIA registered or ISO 15189 certified laboratory.</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning btn-brd-radius" id="confirm-highriskcountry-reminder">CONFIRM</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#confirm-highriskcountry-reminder').click(function(){
+		closeModal('highRiskCountryReminderModal');
+	});
+</script>

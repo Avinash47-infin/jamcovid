@@ -1,0 +1,91 @@
+header{
+	background: #25538F;
+}
+
+.logo{
+	max-width: 20%;
+	padding:.5%;
+}
+
+.logo-j{
+	max-width: 20%;
+	padding:.5%;
+	margin-left: 60%;
+}
+
+.breathing-space{
+	padding:0 5rem ;
+}
+
+.payment-img{
+	max-width:30%;
+}
+
+.down-print-icon{
+	max-width:15%;
+}
+
+@media print {
+	body {-webkit-print-color-adjust: exact;}
+	header{
+		background: #25538F !important;
+	}
+
+	.logo {
+		max-width: 30% !important;
+	}
+
+	.logo-j{
+		max-width: 30% !important;
+		margin-left: 60% !important;
+		margin-top: -11%;
+	}
+
+	.footer_country_name {
+		font-size: 1 rem;
+	}
+
+	.payment-img{
+		max-width:45%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.logo-j {
+		max-width: 20%;
+		padding: .5%;
+		margin-left: 55%;
+	}
+
+	.payment-img{
+		max-width:100%;
+	}
+
+	.col-recipt-col{
+		width:10% !important;
+	}
+
+	.down-print-icon{
+		max-width:15%;
+		display: block;
+		margin: auto;
+	}
+
+
+	.breathing-space{
+		padding:0 1rem ;
+	}
+	.col-recipt{
+		width:40% !important;
+		font-size:12px;
+	}
+
+	.breathing-space {
+		padding: 0 1rem !important;
+	}
+
+	.amber-logo img {
+		max-width: 35%;
+	}
+}

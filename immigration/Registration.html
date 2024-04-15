@@ -1,0 +1,417 @@
+<section>
+	<div class="non-resident-head non-resident-head-register"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>1/7</span> Registration / Set up entry process</div>
+				<form id="registration-form">
+
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Who are you completing this form for?<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate" id="select-report-for" name="report_for" data-rule="registration">
+											<option value="">Select</option>
+											<option value="1">Yourself</option>
+											<option value="2">Someone else</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+							<div id="report-someone-cloned"></div>
+							<div id="relationship-cloned"></div>
+						</div>
+					</div>
+
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Last Name<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate reg_lastname" name="last_name" value="" data-rule="registration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>First Name<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate reg_firstname" name="first_name" value="" data-rule="registration" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Country of Residence<span class="text-danger"> *</span></label>
+									<select class="form-control pos_validate select_country identi_country" id="identi-country" name="country" data-rule="registration">
+										<option value="">Select</option>
+									</select>
+									<span class="validation_error"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Intended Date of Travel<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate date_of_travel reg_date_of_travel" name="date_of_travel" value="" data-rule="registration" readonly="true" />
+									<span class="validation_error"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-registration', 'immigration-request-lists');">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Submit</button>
+					</div>
+					<input type="hidden" class="updated-user-id" name="user_id" value="">
+					<input type="hidden" class="updated-user-email" name="email" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="report-for-someone">
+	<div class="col-md-4">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input someone_for app_radio_validate" id="someone-for-1" value="1" name="someone_for">
+				<label class="custom-control-label" for="someone-for-1">A minor for whom you are a parent or guardian?</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input someone_for app_radio_validate" id="someone-for-2" value="2" name="someone_for">
+				<label class="custom-control-label" for="someone-for-2">Someone who has disability.</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<div class="custom-control custom-radio">
+				<input type="radio" class="custom-control-input someone_for app_radio_validate" id="someone-for-3" value="3" name="someone_for">
+				<label class="custom-control-label" for="someone-for-3">Other reasons</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<input type="hidden" name="someone_for_radio" class="someone_for_radio" value="" focus-input-id="someone-for-1" />
+		<span class="validation_error"></span>
+	</div>
+</div>
+<div class="row relationship_info_div" id="someone_for_1">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Relationship with the Minor<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_with" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Last Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_lastname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your First Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_firstname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Middle Name</label>
+			<input type="text" class="form-control pos_validate" name="relationship_middlename" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Address<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_address" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Phone Number</label>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">+</span>
+				</div>
+				<input type="text" class="form-control pos_validate" name="relationship_phone_number" value="" data-rule="registration" onkeypress="return restrictMobileNumber(event)" maxlength="13" data-float=".1" />
+				<span class="validation_error validation_inpgrp_error"></span>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="row relationship_info_div" id="someone_for_2">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Relationship with the person<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_with" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Last Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_lastname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your First Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_firstname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Middle Name</label>
+			<input type="text" class="form-control pos_validate" name="relationship_middlename" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Address<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_address" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Phone Number</label>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">+</span>
+				</div>
+				<input type="text" class="form-control pos_validate" name="relationship_phone_number" value="" data-rule="registration" onkeypress="return restrictMobileNumber(event)" maxlength="13" data-float=".1" />
+				<span class="validation_error validation_inpgrp_error"></span>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="row relationship_info_div" id="someone_for_3">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Relationship with the person<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_with" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Last Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_lastname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your First Name<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_firstname" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Middle Name</label>
+			<input type="text" class="form-control pos_validate" name="relationship_middlename" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Address<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="relationship_address" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Your Phone Number</label>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">+</span>
+				</div>
+				<input type="text" class="form-control pos_validate" name="relationship_phone_number" value="" data-rule="registration" onkeypress="return restrictMobileNumber(event)" maxlength="13" data-float=".1" />
+				<span class="validation_error validation_inpgrp_error"></span>
+			</div>
+
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Reason<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="other_reason" value="" data-rule="registration" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	//initiateDatePickerNotRestrict('date_of_travel');
+
+	var endTravelDate = new Date();
+	endTravelDate.setDate(endTravelDate.getDate() + 7);
+
+	$(".date_of_travel").datepicker({
+		format: 'yyyy-mm-dd',
+		autoHide: true,
+		startDate: new Date(),
+		endDate: endTravelDate
+	}).on('change', function() {
+		$(this).next().html('');
+		$(this).removeClass('error_border');
+	});
+
+	if(applicationSession.checkCookie('touristSessionUser')) {
+		var sessionUser = applicationSession.getCookie('touristSessionUser');
+		$('.updated-user-email').val(sessionUser.email);
+		$('.updated-user-id').val(sessionUser.id);
+	}
+
+	/**
+	* report for someone else
+	*/
+	$(document).on('change', '#select-report-for', function() {
+		var value = $(this).val();
+		if(value == 2) {
+			var cloned = $('#report-for-someone').clone();
+			if(!$('#report-someone-cloned').html()) {
+				$('#report-someone-cloned').append(cloned);
+				$('#report-someone-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+			}
+
+			/* consent page */
+			$('.someone_consent').show();
+			$('.myself_consent').hide();
+		} else {
+			$('#report-someone-cloned').empty();
+			$('#relationship-cloned').empty();
+			/* consent page */
+			$('.someone_consent').hide();
+			$('.myself_consent').show();
+		}
+	});
+
+	/**
+	* report for someone else
+	*/
+	$(document).on('click', '.someone_for', function() {
+		var value = $(this).val();
+		var cloned = $('#someone_for_'+value).clone();
+		$('#relationship-cloned').empty();
+		if(!$('#relationship-cloned').html()) {
+			$('#relationship-cloned').append(cloned);
+			$('#relationship-cloned').find('.relationship_info_div').removeClass('relationship_info_div');
+		}
+	});
+
+	$('#identi-country').change(function(){
+		var value = $(this).val();
+		var countryOptions = ["38","231","232"];
+
+		if(countryOptions.indexOf(value) >= 0) {
+			immigration_rule['zipcode'] = {
+				"required": {
+					"value": true,
+					"message": "Zipcode is required"
+				},
+				"max": {
+					"value": fieldRule.immigration.zipcode.max,
+					"message": "Maximum length is "+fieldRule.immigration.zipcode.max
+				}
+			};
+			var request  = {
+				'url'  	   		  : "states?country_id="+value,
+				'type' 	   		  : "GET",
+				'data' 	   		  : {},
+				'dataType' 		  : "json",
+				'success_message' : false,
+				'error_message'   : true,
+				'ajax_loader'	  : true,
+				'window_reload'	  : false
+			}
+			dataTable.makeRequest(request, processCurrentResponse);
+			function processCurrentResponse(response, status_code) {
+				if(status_code == posConfig.response_code.ok) {
+					var data = response.data;
+					var options = '<option value="">Select</option>';
+					var states_list = data.states;
+					for(var i in states_list) {
+						options += "<option value='"+states_list[i].name+"' state-id='"+states_list[i].id+"'>"+states_list[i].name+"</option>";
+					}
+
+					$('#select-identi-states').empty();
+					$('#select-identi-states').append(options);
+
+					var cloned = $('#state-select-input-clone').clone();
+					$('#state-input-div').empty();
+					$('#state-input-div').append(cloned);
+					$('#state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+
+				} else if(status_code == posConfig.response_code.bad_request) {
+					var cloned = $('#state-text-input-clone').clone();
+					$('#state-input-div').empty();
+					$('#state-input-div').append(cloned);
+					$('#state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+				}
+			}
+		} else {
+			immigration_rule['zipcode'] = {
+				"max": {
+					"value": fieldRule.immigration.zipcode.max,
+					"message": "Maximum length is "+fieldRule.immigration.zipcode.max
+				}
+			};
+			var cloned = $('#state-text-input-clone').clone();
+			$('#state-input-div').empty();
+			$('#state-input-div').append(cloned);
+			$('#state-input-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+		}
+
+		if(value != "") {
+			$("#countries-travelled").find("option[value="+value+"]").prop("selected", "selected");
+			$('#countries-travelled').multiselect('reload');
+		}
+
+		// var highCountryOptions = ["232","60","143","30","171"];
+		// if (highCountryOptions.indexOf(value) >= 0) {
+		// 	var country_name = $( "#identi-country option:selected" ).text();
+		// 	$('.country_name').html(country_name);
+		// 	openModal('highRiskCountryReminderModal');
+		// }
+
+		var ukProtocolResponse = checkUKProtocolExist();
+		cloneUKTravelDate(ukProtocolResponse);
+	});
+
+	/**
+	* Submit Registration / Set up entry process
+	*/
+	$(document).on('submit', '#registration-form', function(e) {
+		e.preventDefault();
+
+		submitRegistrationForm();
+	});
+
+</script>

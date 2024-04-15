@@ -1,0 +1,33 @@
+<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-content">
+		<div class="modal-header submitted-modal-header">
+			<h5 class="modal-title" id="appRejectedLabel"><i class="fa fa-check" aria-hidden="true"></i> Application Submitted</h5>
+		</div>
+		<div class="modal-body">
+			<div class="col-md-12">
+				<div style="font-size: 18px;">
+					<span class="popup_approved_content">
+						<ul style="list-style: none;">
+							<li>Your application will be processed immediately, and the outcome will be sent to your registered email address <span class="text-primary submitted_user_email"></span>. The application reference number is: <span class="reference_code text-danger"></span>.</li>
+							<li class="popup_hrc_content" style="display: none;">If approved, you are required to present the result of a COVID-19 PCR or Antigen test that has been authorized by the United States Food and Drug Administration (FDA) under an Emergency Use Authorization (EUA) or meets the standards of the World Health Organisation (WHO) to the airline representative at check in. More information on the testing requirement is available at <a href="https://www.visitjamaica.com/travelauthorization/test-req/" target="_blank">https://www.visitjamaica.com/travelauthorization/test-req/</a></li>
+						</ul>
+					</span>
+					<span class="popup_pending_content" style="display: none">
+						<ul style="list-style: none;">
+							<li>Your application will be assessed and the outcome sent to your registered email address <span class="text-primary submitted_user_email"></span>. The application reference number is: <span class="reference_code text-danger"></span>.</li>
+							<li class="popup_hrc_content" style="display: none;">If approved, you are required to present the result of a COVID-19 PCR or Antigen test that has been authorized by the United States Food and Drug Administration (FDA) under an Emergency Use Authorization (EUA) or meets the standards of the World Health Organisation (WHO) to the airline representative at check in. More information on the testing requirement is available at <a href="https://www.visitjamaica.com/travelauthorization/test-req/" target="_blank">https://www.visitjamaica.com/travelauthorization/test-req/</a></li>
+						</ul>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning btn-brd-radius" id="btn-close-modal">OK</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#btn-close-modal').click(function(){
+		window.location.reload();
+	});
+</script>

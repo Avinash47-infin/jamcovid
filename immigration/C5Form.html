@@ -1,0 +1,931 @@
+<section>
+	<div class="non-resident-head non-resident-head-c5"></div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading"><span>7/7</span> Immigration / Customs C5 Card</div>
+				<form id="customs-c5-form">
+					<div class="panel panel-default">
+						<div class="panel-heading text-center">PERSONAL INFORMATION</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Last Name<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_lastname" name="c5_lastname" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>First Name<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_firstname" name="c5_firstname" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Middle Name</label>
+										<input type="text" class="form-control pos_validate c5_inp_middlename" name="c5_middlename" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label>Birth Date (As it appears on your Passport)<span class="text-danger"> *</span></label>
+									<div class="form-group custom_dob_container">
+										<div id="c5-dob-container" class="form-control text-center"></div>
+										<input type="hidden" id="c5-my-dob" name="c5_dob" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Gender<span class="text-danger"> *</span></label>
+										<select name="c5_gender" class="form-control pos_validate c5_inp_gender" data-rule="customsform">
+											<option value="">Select</option>
+											<option value="1">Male</option>
+											<option value="2">Female</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Family Members with you<span class="text-danger"> *</span></label>
+										<select name="no_of_family_members" id="c5-select-familymembers" class="form-control pos_validate" data-rule="customsform">
+											<option value="">Select</option>
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading text-center">CONTACT INFO / ADDRESS</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Street Address<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_streetaddress" name="c5_street_address" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>City / Town<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_city" name="c5_city" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>State / Province / Region<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_state" name="c5_state" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Zip / Postal Code<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_zipcode" name="c5_zipcode" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Country<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate select_country c5_select_country" id="c5-select-country" name="c5_country" data-rule="customsform">
+											<option value="">Select</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Occupation<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate c5_inp_occupation" name="c5_cccupation" data-rule="customsform">
+											<option value="">Select</option>
+											<option value="AGRICU">Agriculture</option>
+											<option value="AIRLIN">Airline Industry</option>
+											<option value="ARTSEN">Arts & Entertainment</option>
+											<option value="CEOVPS">C.E.O. & Vice Presidents</option>
+											<option value="CHILD">Child</option>
+											<option value="COMPUT">Computer Services</option>
+											<option value="CONSTR">Construction</option>
+											<option value="CUSTOM">Customer Service</option>
+											<option value="EDUAC">Educational</option>
+											<option value="FINANC">Financial Services/Insurance</option>
+											<option value="GENERA">General Services/Drivers</option>
+											<option value="GOVERN">Government</option>
+											<option value="HOMETE">Home Technician/Caregiver/Domistic Worker/Baby Sitters</option>
+											<option value="HOSPIT">Hospitality Industry</option>
+											<option value="HOUSW">Housewife</option>
+											<option value="JOURNA">Journalism/Reporters/Editors</option>
+											<option value="JUDICI">Judicial/Lawyers/Clerk of Courts</option>
+											<option value="MANAGE">Management</option>
+											<option value="MANUF">Manufacturing</option>
+											<option value="MARKET">Marketing, Advertising & P.R.</option>
+											<option value="MEDICA">Medical Practioners</option>
+											<option value="OTHERO">Other Occupation</option>
+											<option value="PROFES">Professionals/Real Estate</option>
+											<option value="RESEAR">Research & Science</option>
+											<option value="RETIRE">Retired</option>
+											<option value="SALES">Sales</option>
+											<option value="SECRET">Secretarial Services</option>
+											<option value="SECURI">Security/Police/Firemen/Military</option>
+											<option value="SELFEM">Self-Employed</option>
+											<option value="SOCIAW">Social Worker/Voluntary Services/Religious Leaders</option>
+											<option value="SPORTS">Sports / Coaches</option>
+											<option value="STUDEN">Student</option>
+											<option value="TECHNI">Technical/Engineering/Maintenance</option>
+											<option value="NOTSTA">Not Stated</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Passport Number (As it appears on your Passport)<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_passportno special_char_input" name="c5_passport_number" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Country of Issue (As it appears on your Passport)<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate select_country c5_select_issuecountry" id="c5-select-issuecountry" name="c5_country_of_issue" data-rule="customsform">
+											<option value="">Select</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Intended Address in Jamaica<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_intendaddress" name="c5_intended_address_in_jamaica" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Countries visited in the last 6 weeks<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate dropdown_multi_checkbox" id="c5-countries-travelled" name="c5_countries_travelled[]" multiple="multiple" data-rule="immigration">
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Departure Port eg. Miami<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_departureport" name="departure_port" value="" data-rule="customsform" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Travel Date<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_datepicker c5_date_travel" name="travel_date" value="" data-rule="customsform" readonly="true" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+
+							<div id="c5-travelinfo-cloned"></div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Purpose Of Visit<span class="text-danger"> *</span></label>
+										<select class="form-control pos_validate" name="purpose_of_visit" id="select-purpose-visit" data-rule="customsform">
+											<option value="">Select</option>
+											<option value="1">Visiting Friends / Relatives</option>
+											<option value="2">Vacation</option>
+											<option value="3">Business / Meeting</option>
+											<option value="4">Intransit</option>
+											<option value="7">Honeymoon / Wedding</option>
+											<option value="8">Other</option>
+											<option value="5">Resident</option>
+											<option value="6">Work</option>
+										</select>
+										<span class="validation_error"></span>
+									</div>
+								</div>
+							</div>
+							<div id="purpose-visit-cloned"></div>
+
+							<div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+										<label>Length Of Stay<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate" name="length_of_stay" id="length-of-stay" value="" data-rule="customsform" placeholder="(In Days)" />
+										<span class="validation_error"></span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>NUMBER OF PIECES OF LUGGAGE<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_accluggage error_border" name="accompanied_luggage" value="" data-rule="customsform" placeholder="Accompanied (11A)" />
+										<span class="validation_error"></span>
+										<span style="font-size: 12px;">checked luggage & hand luggage</span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>NUMBER OF PIECES OF LUGGAGE<span class="text-danger"> *</span></label>
+										<input type="text" class="form-control pos_validate c5_inp_unaccluggage error_border" name="unaccompanied_luggage" value="" data-rule="customsform" placeholder="Unaccompanied (11B)" />
+										<span class="validation_error"></span>
+										<span style="font-size: 12px;">luggage sent by air or sea freight</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading text-center">I AM BRINGING</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>1) Fruits, plants, cut flowers, vegetable, soil, meat, live animals and organisms, honey, wildlife products, plant material, food, animal products or live birds.</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-1-yes" value="1" name="things_1">
+											<label class="custom-control-label" for="things-1-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-1-no" value="2" name="things_1">
+											<label class="custom-control-label" for="things-1-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>2) Pharmaceuticals, chemicals, narcotics and other illicit drugs or biological substances</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-2-yes" value="1" name="things_2">
+											<label class="custom-control-label" for="things-2-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-2-no" value="2" name="things_2">
+											<label class="custom-control-label" for="things-2-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>3) Illicit drugs or narcotics.</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-3-yes" value="1" name="things_3">
+											<label class="custom-control-label" for="things-3-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-3-no" value="2" name="things_3">
+											<label class="custom-control-label" for="things-3-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>4) Radioactive or nuclear substances.</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-4-yes" value="1" name="things_4">
+											<label class="custom-control-label" for="things-4-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-4-no" value="2" name="things_4">
+											<label class="custom-control-label" for="things-4-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>5) Arms, ammunitions, explosives, fireworks, toy guns or other weapons</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-5-yes" value="1" name="things_5">
+											<label class="custom-control-label" for="things-5-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-5-no" value="2" name="things_5">
+											<label class="custom-control-label" for="things-5-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>6) I am / we are carrying currency or monetary instruments over U$$10,000 or equivalent</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-6-yes" value="1" name="things_6">
+											<label class="custom-control-label" for="things-6-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-6-no" value="2" name="things_6">
+											<label class="custom-control-label" for="things-6-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>7) I have goods exceeding the value of my (our) personal duty-free allowance</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-7-yes" value="1" name="things_7">
+											<label class="custom-control-label" for="things-7-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-7-no" value="2" name="things_7">
+											<label class="custom-control-label" for="things-7-no">No</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>8) I have gifts or articles for resale</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-8-yes" value="1" name="things_8">
+											<label class="custom-control-label" for="things-8-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="things-8-no" value="2" name="things_8">
+											<label class="custom-control-label" for="things-8-no">No</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="c5-relation-panel" style="display: none;">
+						<div class="panel-heading text-center">SPOUSE & CHILDREN UNDER AGE 18 ACCOMPANYING YOU</div>
+						<div class="panel-body">
+							<p class="text-danger">EACH ACCOMPANYING PASSENGER IS REQUIRED TO APPLY FOR A TRAVEL AUTHORIZATION AND COMPLETE A SIMILAR FORM</p>
+
+							<div id="c5-relation-div">
+								<div class="row travel_contact_div" id="c5-relation-clone-0">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Last Name<span class="text-danger"> *</span></label>
+											<input type="text" class="form-control pos_validate" id="c5-relation-lastname-0" name="relation_lastname[0]" value="" data-rule="customsform" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>First Name<span class="text-danger"> *</span></label>
+											<input type="text" class="form-control pos_validate" id="c5-relation-name-0" name="relation_name[0]" value="" data-rule="customsform" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Middle Name</label>
+											<input type="text" class="form-control pos_validate" id="c5-relation-middlename-0" name="relation_middlename[0]" value="" data-rule="customsform" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label>Date Of Birth<span class="text-danger"> *</span></label>
+										<div class="form-group custom_dob_container">
+											<div id="c5-relation-dob-container-0" class="form-control text-center"></div>
+											<input type="hidden" id="c5-my-dob-rel-0" name="relation_contact_dob[0]" value="" data-rule="customsform" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Relation<span class="text-danger"> *</span></label>
+											<input type="text" class="form-control pos_validate" id="c5-relation-relation-0" name="relation_relation[0]" value="" data-rule="customsform" placeholder="Son, Wife, etc..." />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<button type="button" class="btn btn-sm btn-success" id="append-c5-relation" style="margin-top: 9%;">
+												ADD MORE&nbsp;&nbsp;<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p>All passengers, 18 years & older are entitled to US$500 Duty Free Allowance on items not for resale or In commercial quantity.</p>
+							<p>In addition, passengers and crew members are entitled to import free of duty: 200 sticks of cigarettes or 50 sticks of cigars or 230g of Tobacco; 1 litre of Spirits; 1 litre of Wine; 170 ml of Perfumed Spirits and 340 ml of Toilet Water.</p>
+						</div>
+					</div>
+
+					<div class="panel panel-default" >
+						<div class="panel-heading text-center">IF YOU ARE IN DOUBT <span style="font-size: 12px;">(Declare all your goods to the customs officer)</span></div>
+						<div class="panel-body">
+							<p>Value should be the price paid or payable in the country of purchase</p>
+							<div id="c5-payment-div">
+								<div class="row travel_contact_div" id="c5-payment-clone-0">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Description Of Articles</label>
+											<input type="text" class="form-control pos_validate c5_input_payment" name="payment_article[0]" value="" data-rule="customsform" />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Value $0.00</label>
+											<input type="text" class="form-control pos_validate c5_input_payment" name="payment_value[0]" value="" data-rule="customsform"  />
+											<span class="validation_error"></span>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Select Currency</label>
+											<div id="c5-payment-currency-container-0"></div>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<button type="button" class="btn btn-sm btn-success" id="append-c5-payment" style="margin-top: 9%;">
+												ADD MORE&nbsp;&nbsp;<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading text-center">DECLARATION</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label>I declare that the information given is true and correct. I understand that the failure to make a full declaration is an offence and may result in fines, forfeiture of the goods and/or imprisonment. I also understand that I have the right to appeal.</label>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="c5-agree-question-1-yes" value="1" name="c5_agreement_question_one">
+											<label class="custom-control-label" for="c5-agree-question-1-yes">Yes</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="c5-agree-question-1-no" value="2" name="c5_agreement_question_one">
+											<label class="custom-control-label" for="c5-agree-question-1-no">No</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div id="capcha-element"></div>
+						</div>
+						<div class="col-md-12">
+							<span class="validation_error recaptcha_validation_error"></span>
+						</div>
+					</div>
+
+					<div class="panel-footer">
+						<button type="button" class="btn btn-secondary btn-brd-radius" onclick="backToPage('immigration-customs-c5', 'immigration-qtn-order');">Back</button>
+						<button type="submit" class="btn btn-warning btn-brd-radius">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" name="c5_relation_clone_id" id="c5-relation-clone-id" value="0" />
+<input type="hidden" name="c5_relation_payment_id" id="c5-payment-clone-id" value="0" />
+<div class="row div_hidden_clone" id="div-other-purpose-visit">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Other (Please state)<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate other_purpose_of_visit" name="other_purpose_of_visit" value="" data-rule="customsform" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="div-c5-travelinfo-1">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Port of Arrival<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate" id="c5-airport-code" name="c5_airport_code" data-rule="customsform">
+				<option value="">Select</option>
+				<option value="KIN">Norman Manley International Airport (KIN)</option>
+				<option value="MBJ">Sangster International Airport (MBJ)</option>
+				<option value="OCJ">Ian Fleming International Airport (OCJ)</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Flight Name<span class="text-danger"> *</span></label>
+			<select name="flight_name" class="form-control pos_validate c5_select_airline" data-rule="customsform">
+				<option value="">Select</option>
+				<option value="KG">Aerogaviota</option><option value="AC">Air Canada</option><option value="RV">Air Canada Rouge</option><option value="TS">Air Transat</option><option value="AA">American Airlines</option><option value="BA">British Airways</option><option value="BW">Caribbean Airlines</option><option value="KX">Cayman Airways</option><option value="DE">Condor</option><option value="CM">Copa Airlines</option><option value="DL">Delta Air Lines</option><option value="OJ">Fly Jamaica</option><option value="F9">Frontier Airlines</option><option value="JY">InterCaribbean Airways</option><option value="B6">JetBlue Airways</option><option value="LL">Miami Air</option><option value="NO">Neos Air</option><option value="NW">Northwest Airlines</option><option value="NWS">Norwind Airlines</option><option value="OJ">Overland Airways</option><option value="OBS">Orbest Airlines</option><option value="private">Private</option><option value="WN">Southwest Airlines</option><option value="NK">Spirit Airlines</option><option value="SY">Sun Country Airlines</option><option value="WG">Sunwing Airlines</option><option value="WQ">Swift Air</option><option value="WO">Swoop Airline</option><option value="DK">Thomas Cook</option><option value="TOM">Thomson Airways</option><option value="OR">TUIFly Netherlands</option><option value="TB">TUIFly Belgium</option><option value="UA">United Airlines</option><option value="VS">Virgin Atlantic Airways</option><option value="WS">WestJet</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label>Flight Number<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate c5_inp_flightno" name="flight_number" value="" data-rule="customsform" maxlength="4">
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="div-c5-travelinfo-2">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Name of the Vessel<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" id="c5-vessel-name" name="c5_vessel_name" value="" data-rule="customsform">
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Type of Vessel<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate" id="c5-vessel-type" name="c5_vessel_type" data-rule="customsform">
+				<option value="">Select</option>
+				<option value="Cruise ship">Cruise ship</option>
+				<option value="Pleasure boat">Pleasure boat</option>
+				<option value="Cargo ship">Cargo ship</option>
+				<option value="Fishing vessel">Fishing vessel</option>
+				<option value="Military">Military</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Location of the Vessel<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" id="c5-vessel-location" name="c5_vessel_location" value="" data-rule="customsform">
+			<span class="validation_error"></span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Port of Arrival<span class="text-danger"> *</span></label>
+			<select class="form-control pos_validate" id="c5-airport-code" name="c5_airport_code" data-rule="customsform">
+				<option value="">Select</option>
+				<option value="Sea Port">Sea Port</option>
+			</select>
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+<script type="text/javascript">
+
+	var onloadCallback = function() {
+		grecaptcha.render('capcha-element', {
+			'sitekey' : posConfig.nocapcha_sitekey,
+			'callback': verifyCapchaCallback,
+		});
+	};
+
+	var verifyCapchaCallback = function(response) {
+		$('.recaptcha_validation_error').html('');
+	};
+
+	appDateOfBirth.createField({
+		containerId : 'c5-dob-container',
+		inputId: 'c5-my-dob',
+		dayId: 'select-dob-day-c5-1',
+		monthId: 'select-dob-month-c5-1',
+		yearId: 'select-dob-year-c5-1'
+	});
+
+	appDateOfBirth.createField({
+		containerId : 'c5-relation-dob-container-0',
+		inputId: 'c5-my-dob-rel-0',
+		dayId: 'select-dob-day-c5-rel-0',
+		monthId: 'select-dob-month-c5-rel-0',
+		yearId: 'select-dob-year-c5-rel-0'
+	});
+
+	appCurrency.createField({
+		containerId : 'c5-payment-currency-container-0',
+		name: 'payment_currency[0]',
+	});
+
+	$(".c5_datepicker").datepicker({
+		format: 'yyyy-mm-dd',
+		autoHide: true,
+	}).on('change', function() {
+		$(this).next().html('');
+		$(this).removeClass('error_border');
+	});
+
+	// $(document).on('click', '.purvisit_cbox', function() {
+	// 	$('.purvisit_cbox').not(this).prop('checked', false);
+
+	// 	if(this.checked) {
+	// 		if($(this).val() == 5) {
+	// 			$('#length-of-stay').val(0);
+	// 			$('#length-of-stay').prop('readonly', true);
+	// 		} else {
+	// 			$('#length-of-stay').prop('readonly', false);
+	// 		}
+	// 	} else {
+	// 		$('#length-of-stay').prop('readonly', false);
+	// 	}
+	// });
+
+	$(document).on('change', '#select-purpose-visit', function() {
+		var value = $(this).val();
+		if(value == 8) {
+			if(!$('#purpose-visit-cloned').html()) {
+				var cloned = $('#div-other-purpose-visit').clone();
+				$('#purpose-visit-cloned').append(cloned);
+				$('#purpose-visit-cloned').find('.div_hidden_clone').removeClass('div_hidden_clone');
+			}
+		} else {
+			$('#purpose-visit-cloned').empty();
+		}
+
+		if(value == 5) {
+			$('#length-of-stay').val(0);
+			$('#length-of-stay').attr('readonly', true);
+		} else {
+			$('#length-of-stay').removeAttr('readonly');
+		}
+	});
+
+	/**
+	* Append c5 relation clone
+	*/
+	$(document).on('click', '#append-c5-relation', function() {
+		var incremental_id = $('#c5-relation-clone-id').val();
+		incremental_id = parseInt(incremental_id) + 1;
+		$('#c5-relation-clone-id').val(incremental_id);
+		var contact = '<div class="row travel_contact_div" id="c5-relation-clone-'+incremental_id+'">'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<label>Last Name<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="c5-relation-lastname-'+incremental_id+'" name="relation_lastname['+incremental_id+']" value="" data-rule="customsform" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<label>First Name<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="c5-relation-name-'+incremental_id+'" name="relation_name['+incremental_id+']" value="" data-rule="customsform" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<label>Middle Name</label>'+
+		'<input type="text" class="form-control pos_validate" id="c5-relation-middlename-'+incremental_id+'" name="relation_middlename['+incremental_id+']" value="" data-rule="customsform" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<label>Date Of Birth<span class="text-danger"> *</span></label>'+
+		'<div class="form-group custom_dob_container">'+
+		'<div id="c5-relation-dob-container-'+incremental_id+'" class="form-control text-center"></div>'+
+		'<input type="hidden" id="c5-my-dob-rel-'+incremental_id+'" name="relation_contact_dob['+incremental_id+']" value="" data-rule="customsform" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<label>Relation<span class="text-danger"> *</span></label>'+
+		'<input type="text" class="form-control pos_validate" id="c5-relation-relation-'+incremental_id+'" name="relation_relation['+incremental_id+']" value="" data-rule="customsform" placeholder="Son, Wife, etc..." />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-4">'+
+		'<div class="form-group">'+
+		'<button type="button" class="btn btn-sm btn-danger remove-c5-relation-clone" data-clone_id="'+incremental_id+'" style="margin-top: 9%;">'+
+		'REMOVE&nbsp;&nbsp;<i class="fa fa-minus"></i>'+
+		'</button>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#c5-relation-div').append(contact);
+		appDateOfBirth.createField({
+			containerId : 'c5-relation-dob-container-'+incremental_id,
+			inputId: 'c5-my-dob-rel-'+incremental_id,
+			dayId: 'select-dob-day-c5-rel-'+incremental_id,
+			monthId: 'select-dob-month-c5-rel-'+incremental_id,
+			yearId: 'select-dob-year-c5-rel-'+incremental_id
+		});
+	});
+
+	/**
+	* Remove clone of contact div
+	*/
+	$(document).on('click','.remove-c5-relation-clone',function() {
+		var current = this;
+		var clone_id = $(this).data('clone_id');
+		swal({
+			title: "Are you sure?",
+			text: "",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				current.closest('div#c5-relation-clone-'+clone_id).remove();
+			}
+		});
+
+	});
+
+	$(document).on('change','#c5-select-familymembers',function() {
+		var value = $(this).val();
+		if(!parseInt(value)) {
+			$('#c5-relation-panel').hide();
+			delete customsform_rule['relation_name'];
+			delete customsform_rule['relation_lastname'];
+			delete customsform_rule['relation_middlename'];
+			delete customsform_rule['relation_contact_dob'];
+			delete customsform_rule['relation_relation'];
+			$('#c5-relation-div').find('input:text').val('');
+			$('#c5-relation-div').find('input:hidden').val('');
+			$('#c5-relation-div').find('select').val('');
+		} else {
+			$('#c5-relation-panel').show();
+			customsform_rule['relation_name'] = {
+				"required": {
+					"value": true,
+					"message": "First Name is required"
+				},
+				"max": {
+					"value": fieldRule.immigration.firstname.max,
+					"message": "Maximum length is "+fieldRule.immigration.firstname.max
+				}
+			};
+			customsform_rule['relation_lastname'] = {
+				"required": {
+					"value": true,
+					"message": "Last Name is required"
+				},
+				"max": {
+					"value": fieldRule.immigration.lastname.max,
+					"message": "Maximum length is "+fieldRule.immigration.lastname.max
+				}
+			};
+			customsform_rule['relation_middlename'] = {
+				"max": {
+					"value": fieldRule.immigration.middlename.max,
+					"message": "Maximum length is "+fieldRule.immigration.middlename.max
+				}
+			};
+			customsform_rule['relation_contact_dob'] = {
+				"required": {
+					"value": true,
+					"message": "Date of Birth is required"
+				},
+				"date" : {
+					"value" : 'DD-MM-YYYY',
+					"message" : "Invalid Date"
+				},
+				"dob" : {
+					"value" : 'DD-MM-YYYY',
+					"message" : "Invalid Date"
+				}
+			};
+			customsform_rule['relation_relation'] = {
+				"required": {
+					"value": true,
+					"message": "Relation is required"
+				},
+				"max": {
+					"value": fieldRule.immigration.relationship_name.max,
+					"message": "Maximum length is "+fieldRule.immigration.relationship_name.max
+				}
+			};
+		}
+	});
+
+	/**
+	* Append c5 relation clone
+	*/
+	$(document).on('click', '#append-c5-payment', function() {
+		var incremental_id = $('#c5-payment-clone-id').val();
+		incremental_id = parseInt(incremental_id) + 1;
+		$('#c5-payment-clone-id').val(incremental_id);
+		var contact = '<div class="row travel_contact_div" id="c5-payment-clone-'+incremental_id+'">'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Description Of Articles</label>'+
+		'<input type="text" class="form-control pos_validate" name="payment_article['+incremental_id+']" value="" data-rule="customsform" />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Value $0.00</label>'+
+		'<input type="text" class="form-control pos_validate" name="payment_value['+incremental_id+']" value="" data-rule="customsform"  />'+
+		'<span class="validation_error"></span>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<label>Select Currency</label>'+
+		'<div id="c5-payment-currency-container-'+incremental_id+'"></div>'+
+		'</div>'+
+		'</div>'+
+		'<div class="col-md-3">'+
+		'<div class="form-group">'+
+		'<button type="button" class="btn btn-sm btn-danger remove-c5-payment-clone" data-clone_id="'+incremental_id+'" style="margin-top: 9%;">'+
+		'REMOVE&nbsp;&nbsp;<i class="fa fa-minus"></i>'+
+		'</button>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#c5-payment-div').append(contact);
+		appCurrency.createField({
+			containerId : 'c5-payment-currency-container-'+incremental_id,
+			name: 'payment_currency['+incremental_id+']',
+		});
+	});
+
+	/**
+	* Remove clone of contact div
+	*/
+	$(document).on('click','.remove-c5-payment-clone',function() {
+		var current = this;
+		var clone_id = $(this).data('clone_id');
+		swal({
+			title: "Are you sure?",
+			text: "",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				current.closest('div#c5-payment-clone-'+clone_id).remove();
+			}
+		});
+
+	});
+
+	$(document).on('change', '.c5_input_payment', function() {
+		var isValid = false;
+		$('.c5_input_payment').each(function(){
+			if($(this).val().length > 0) {
+				isValid = true;
+				return true;
+			}
+		});
+		if(isValid) {
+			customsform_rule['payment_article'] = {
+				"required": {
+					"value": true,
+					"message": "Field is required"
+				},
+			};
+			customsform_rule['payment_value'] = {
+				"required": {
+					"value": true,
+					"message": "Field is required"
+				},
+				"number": {
+					"value": true,
+					"message": "Value is invalid"
+				},
+			};
+			customsform_rule['payment_currency'] = {
+				"required": {
+					"value": true,
+					"message": "Currency is required"
+				},
+			};
+		} else {
+			delete customsform_rule['payment_article'];
+			delete customsform_rule['payment_value'];
+			delete customsform_rule['payment_currency'];
+		}
+	});
+
+
+
+	/**
+	* Submit C5 form
+	*/
+	$('#customs-c5-form').on('submit', function (e) {
+		e.preventDefault();
+		submitC5Form();
+	});
+
+</script>

@@ -1,0 +1,211 @@
+<section>
+	<div class="non-resident-head non-resident-head-login">
+		<div class="container-fluid non-resident-card ml-auto" style="padding: 0px;">
+			<div class="card">
+				<div class="card-body text-left pb-5">
+					Welcome to Non Resident Online Application
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-3">
+		<div class="col-md-12 text-center" id="container-fluid-login">
+			<p class="amber-logo"> Developed & contributed by&nbsp;<a href="http://myamberinnovations.com/" target="_blank"><img src="images/amber-innovations-logo.png" style="margin-top: -10px;"></a>&nbsp;<a href="http://myambergroup.com/" target="_">(An Amber Group Company)</a> for the Government of Jamaica</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<a href="pdf/faq.pdf?v=1" class="btn btn-warning btn-brd-radius pull-left" target="_blank">FAQ</a>
+		</div>
+		<div class="col-md-10">
+			<p class="text-danger"><b>**** IMPORTANT ****</b></p>
+			<p class="text-danger"><b>All travellers who are 12 years of age or over, will be required to present a COVID-19 PCR or Antigen test that has been authorized by the United States Food and Drug Administration (FDA) under an Emergency Use Authorization (EUA) or meets the standards of the World Health Organisation (WHO), to the airline representative at check in. The date of the test sample collection must be less than 3 days from the date of travel.</b></p>
+			<p class="text-danger"><b>A negative test result must be presented in order to complete check in for a flight.</b></p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="check_in_header panel-heading">Travel Authorisation</div>
+				<form id="login-form">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label>Email<span class="text-danger"> *</span></label>
+									<input type="text" class="form-control pos_validate login_input" id="login-email" name="email" value="" data-rule="login" />
+									<span class="validation_error"></span>
+								</div>
+								<label style="color:red;" for="privacy_policy">
+									<input
+									type="checkbox"
+									id="privacy_policy"
+									value="yes"
+									/>
+									<span style="vertical-align: 1px;">I have read and agree to the Jamcovid19 <a href="https://jamcovid19.moh.gov.jm/privacy-policy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<button type="submit" class="btn btn-warning btn-brd-radius user_send_otp">Send One Time Password</button>
+					</div>
+				</form>
+				<form id="verify-otp-form" style="display: none;">
+					<div class="box-body">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Please enter your One Time Password (OTP) which was sent via email to <b><span class="span_email"></span></b></label>
+								<input type="text" class="form-control pos_validate" id="input-otp" placeholder="Enter the One Time Password" name="otp" value="" data-rule="login" maxlength="6"  />
+								<span class="validation_error"></span>
+							</div>
+							<p class="margin">
+								<code><span class="otp_seconds">600</span> seconds to resend the code</code>
+							</p>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div id="verify-otp">
+							<button type="button" name="verify" class="btn btn-warning btn-brd-radius" id="btn-verify-otp">Verify</button>
+						</div>
+						<div id="resend-otp" style="display: none;">
+							<button type="button" name="resend" class="btn btn-warning btn-brd-radius" id="btn-resend-otp">Resend</button>
+							<button type="button" class="btn btn-secondary btn-brd-radius" id="btn-back-verify-otp">Back</button>
+						</div>
+					</div>
+					<input type="hidden" name="email" id="otp-email" value="" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid breathing-space">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="text-center">
+				<p class="text-danger" style="font-size: 18px;"><b>Steps involved in the Travel Authorization Process</b></p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 panel panel-default">
+			<div class="immig_panel_header panel-heading text-center"><span>1</span> Submit Application</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12 immig_content_li">
+						<ul>
+							<li>Enter your email address. A One-Time Password (OTP) will be sent to authenticate your account.</li>
+							<li>Fill in the Personal, Health and Intended Stay in Jamaica information.</li>
+							<li>Provide consent and declaration.</li>
+							<li>Agree to comply with the Terms and Conditions of the applicable Quarantine Order.</li>
+							<li>Complete the Immigration and Customs Form (C5).</li>
+							<li>Submit your application.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2 panel panel-default">
+			<div class="immig_panel_header panel-heading text-center"><span>2</span> Health Risk Assessment</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12 immig_content_li">
+						<ul>
+							<li>Your application will be reviewed and a Covid-19 health risk assessment conducted.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2 panel panel-default">
+			<div class="immig_panel_header panel-heading text-center"><span>3</span> Communication</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12 immig_content_li">
+						<ul>
+							<li>If successful, you will receive an email with your Travel Authorisation.</li>
+							<li>If your health risk assessment level is above the threshold, you will receive an email recommending you do not travel to Jamaica at this time.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2 panel panel-default">
+			<div class="immig_panel_header panel-heading text-center"><span>4</span> Travel Authorisation</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12 immig_content_li">
+						<ul>
+							<li>Save an electronic or printed copy of the Travel Authorisation as you will need to show it to an airline agent at check-in, or when boarding your flight.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 panel panel-default">
+			<div class="immig_panel_header panel-heading text-center"><span>5</span> Check if you need to get tested</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12 immig_content_li">
+						<p>If you are 12 years of age or older, get a COVID-19 PCR or Antigen test that has been authorized by the United States Food and Drug Administration (FDA) under an Emergency Use Authorization (EUA) or meets the standards of the World Health Organization (WHO).</p>
+						<p>
+							<ul>
+								<li>The test sample must be collected within 3 days of the date of travel.</li>
+								<li>The test must be conducted by a CLIA registered or ISO certified laboratory.</li>
+							</ul>
+						</p>
+						<p>Take the test result with you as you will need to present it to the airline representative at check in for your flight.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	/**
+	* Submit login form
+	*/
+	$('#login-form').on('submit', function (e) {
+		e.preventDefault();
+		if ($("#privacy_policy").is(":checked")) {
+			submitLoginForm();
+		}
+		else {
+			dataTable.showNotificationMessage(2, "Please accept the privacy policy");
+		}
+	});
+
+	/**
+	* Submit verify otp form
+	*/
+	$('#verify-otp-form').on('submit', function (e) {
+		e.preventDefault();
+
+	});
+
+	$("#btn-verify-otp").click(function(ev){
+		submitVerifyOtpForm();
+	});
+
+	$("#btn-resend-otp").click(function(ev){
+		submitLoginForm();
+	});
+
+	/**
+	* Back to the send otp form
+	*/
+	$(document).on('click', '#btn-back-verify-otp', function() {
+		$('#verify-otp-form').hide();
+		$('#login-form').show();
+	});
+
+</script>

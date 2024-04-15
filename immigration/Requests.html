@@ -1,0 +1,175 @@
+<section>
+	<div class="non-resident-head non-resident-head-requests">
+		<div class="container-fluid non-resident-card ml-auto" style="padding: 0px;">
+			<div class="card">
+				<div class="card-body text-left pb-5">
+					Welcome to Non Resident Online Application
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container-fluid breathing-space">
+	<div class="row mt-2 mb-4">
+		<div class="col-md-12">
+			<div class="panel panel-default mt-2">
+				<div class="check_in_header panel-heading">Submitted Applications</div>
+				<div class="panel-body">
+					<div class="btn_request mb-3">
+						<button type="button" class="btn btn-warning btn-brd-radius" id="btn-add-request">
+							<i class="fa fa-plus" aria-hidden="true"></i> Add New
+						</button>&nbsp;
+						<button type="button" class="btn btn-warning btn-brd-radius" id="btn-immig-logout">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+						</button>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped" id="tb-submitted-applications">
+							<thead>
+								<tr>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Reference Code</th>
+									<th>Submitted At</th>
+									<th>Expiry At</th>
+									<th>Status</th>
+									<th>Remarks</th>
+									<th width="8%">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="8">No Applications found</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="appAddlnDocumentModal" tabindex="-1" role="dialog" aria-labelledby="appAddlnDocumentLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="appAddlnDocumentLabel">Upload Additional Documents</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form id="immigrant-addln-documents-form" enctype="multipart/form-data">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Notes<span class="text-danger"> *</span></label>
+								<input type="text" class="form-control pos_validate" name="notes" value="" data-rule="additionaldocs" />
+								<span class="validation_error"></span>
+							</div>
+						</div>
+					</div>
+					<div id="addlndoc-testdate-div"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Upload Files</label>
+								<input type="file" name="document[]" id="immig-doc-files" class="form-control" data-rule="additionaldocs" multiple />
+								<span class="validation_error"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-warning btn-brd-radius">Submit</button>
+				</div>
+				<input type="hidden" class="document-immigrant-id" name="immigrant_id" value="">
+				<input type="hidden" class="document-user-id" name="user_id" value="">
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="div-address-age">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>What Age(s)?<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="senior_citizen_age" value="" data-rule="additionaldocs" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="div-other-illness">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Please describe<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate" name="other_serious_illness" value="" data-rule="additionaldocs" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<div class="row div_hidden_clone" id="addlndoc-testdate-clone">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Tested Date<span class="text-danger"> *</span></label>
+			<input type="text" class="form-control pos_validate addlndoc_neg_testdate" name="covid_tested_date" value="" data-rule="additionaldocs" readonly="true" />
+			<span class="validation_error"></span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#btn-add-request').click(function() {
+		$('#immigration-request-lists').hide();
+		$('#immigration-registration').show();
+	});
+
+	$(document).on('click', '.link_upload_additional', function() {
+		var immigrant_id = $(this).data('application_id');
+		$('.document-immigrant-id').val(immigrant_id);
+		var user_id = $('.updated-user-id').val();
+		$('.document-user-id').val(user_id);
+
+		var document_type = $(this).data('req_doc_type');
+		if(document_type == 1) {
+			var cloned = $('#addlndoc-testdate-clone').clone();
+			if(!$('#addlndoc-testdate-div').html()) {
+				$('#addlndoc-testdate-div').append(cloned);
+				$('#addlndoc-testdate-div').find('.div_hidden_clone').removeClass('div_hidden_clone');
+
+				var pastDate = new Date();
+				pastDate.setDate(pastDate.getDate() - 9);
+				$(".addlndoc_neg_testdate").datepicker({
+					format: 'yyyy-mm-dd',
+					autoHide: true,
+					startDate: pastDate,
+					endDate: new Date()
+				}).on('change', function() {
+					$(this).next().html('');
+					$(this).removeClass('error_border');
+				});
+			}
+		} else {
+			$('#addlndoc-testdate-div').empty();
+		}
+
+		openModal('appAddlnDocumentModal');
+	});
+
+/**
+* Submit Travel details form
+*/
+$('#immigrant-addln-documents-form').on('submit', function (e) {
+	e.preventDefault();
+	if(document.getElementById('immig-doc-files').files.length > 0) {
+		submitImmigDocumentsForm();
+	} else {
+		dataTable.showNotificationMessage(2, "Please choose the file");
+	}
+});
+
+</script>
+<style type="text/css">
+	.datepicker-container {
+		z-index: 999999999 !important;
+	}
+</style>

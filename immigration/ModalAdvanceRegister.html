@@ -1,0 +1,24 @@
+<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-content">
+		<div class="modal-header rejected-modal-header">
+			<h5 class="modal-title" id="appAdvanceRegLabel"><i class="fa fa-times" aria-hidden="true"></i> STOP! APPLICATION SUBMISSION INCOMPLETE</h5>
+		</div>
+		<div class="modal-body">
+			<div class="col-md-12">
+				<div style="font-size: 18px;">
+					<p>Thank you for accessing Travel Authorization for Jamaica.</p>
+					<p>You have attempted to apply for a Travel Authorization too early for the travel date you have indicated, as applications must be completed within 5 days of your planned travel date.</p>
+					<p>Please return to <a href="https://www.visitjamaica.com/travelauthorization/" target="_blank">www.visitjamaica.com/travelauthorization</a> on or after <span class="span_arrival_date"></span> and complete your application.</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning btn-brd-radius" id="btn-advreg-close-modal">OK</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#btn-advreg-close-modal').click(function(){
+		window.location.reload();
+	});
+</script>
